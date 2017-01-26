@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<title>Animated Radial Menu Demo</title>
+<style>
+.radial-menu {
+  top:15px;
+  left:15px;
+  position:fixed;
+ display:block;
+  width:100px;
+  height:100px;
+  background-color:transparent;
+  border-radius:50%;
+  z-index:20;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.menu-item1 {
+  width:60%;
+  height:60%;
+  background-color:dimGray;
+  border-radius:50%;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:70px;
+    top:25%;
+  left:25%;
+  z-index:19;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    position:absolute;
+}
+
+.menu-item1-item11 {
+  width:100%;
+  height:100%;
+  background-color:dimGray;
+  border-radius:50%;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:70px;
+  top:25%;
+  left:25%;
+  z-index:18;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    position:absolute;
+}
+
+.menu-item2 {
+  width:60%;
+  height:60%;
+  background-color:dimGray;
+  border-radius:50%;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:70px;
+    top:25%;
+  left:25%;
+  z-index:19;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .2s;
+}
+.menu-item3 {
+  width:60%;
+  height:60%;
+  background-color:dimGray;
+  border-radius:50%;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:70px;
+    top:25%;
+  left:25%;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .4s;  
+}
+  .menu-item4 {
+  width:60%;
+  height:60%;
+  background-color:dimGray;
+  border-radius:50%;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:70px;
+  top:25%;
+  left:25%;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550) .6s;  
+}
+.mask {
+  top:15px;
+  left:15px;
+  width:100px;
+  height:100px;
+  background:darkSlateGray;
+  border-radius:50%;
+  position:absolute;
+  z-index:21;
+  color:white;
+  text-align:center;
+  line-height:120px;
+  cursor:pointer;
+  position:fixed;
+}
+</style>
+</head>
+
+<body>
+
+<div class="radial-menu">
+  <div class="menu-item1">
+		<i class="fa fa-user fa-2x"></i>
+		 <div class="menu-item1-item11"><i class="fa fa-user fa-2x"></i></div>
+  </div>
+  <div class="menu-item2"><i class="fa fa-graduation-cap fa-2x"></i></div>
+  <div class="menu-item3"><i class="fa fa-code fa-2x"></i></div>
+  <div class="menu-item4"><i class="fa fa-envelope-o fa-2x"></i></div>
+  <div class="mask"><i class="fa fa-home fa-3x"></i></div>
+ 
+</div>
+<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script-->
+<script src="./jquery/jquery.min-1.9.1.js"></script>
+<script>
+$(document).ready(function() {
+
+  var active1 = false;
+  var active2 = false;
+  var active3 = false;
+  var active4 = false;
+
+    $('.radial-menu').on('mousedown touchstart', function() {
+    
+    if (!active1) $(this).find('.menu-item1').css({'background-color': 'gray', 'transform': 'translate(0px,125px)'});
+   /* else $(this).find('.menu-item1').css({'background-color': 'dimGray', 'transform': 'none'}); */
+     if (!active2) $(this).find('.menu-item2').css({'background-color': 'gray', 'transform': 'translate(60px,105px)'});
+    else $(this).find('.menu-item2').css({'background-color': 'darkGray', 'transform': 'none'});
+      if (!active3) $(this).find('.menu-item3').css({'background-color': 'gray', 'transform': 'translate(105px,60px)'});
+    else $(this).find('.menu-item3').css({'background-color': 'silver', 'transform': 'none'});
+      if (!active4) $(this).find('.menu-item4').css({'background-color': 'gray', 'transform': 'translate(125px,0px)'});
+    else $(this).find('.menu-item4').css({'background-color': 'silver', 'transform': 'none'});
+    active1 = !active1;
+    active2 = !active2;
+    active3 = !active3;
+    active4 = !active4;
+      
+    });
+	
+	$('.menu-item1').on('mousedown touchstart', function() {
+		$(this).find('.menu-item1-item11').css({'background-color': 'gray', 'transform': 'translate(0px,185px)'});
+	});
+
+});
+</script>
+
+</body>
+</html>
