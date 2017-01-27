@@ -1,10 +1,10 @@
-.radial-menu {
-  top:40%;
-  left:45%;
+.radial-menu-right {
+  top:35%;
+  left:25%;
   position:absolute;
   display:block;
-  width:100px;
-  height:100px;
+  width:150px;
+  height:150px;
   background-color:transparent;
   border-radius:50%;
   z-index:20;
@@ -13,11 +13,54 @@
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
-.mask {
+.radial-menu-left {
+  top:35%;
+  left:55%;
+  position:absolute;
+  display:block;
+  width:150px;
+  height:150px;
+  border-style: solid;
+  border-color: white;
+  background-color:transparent;
+  border-radius:50%;
+  z-index:20;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.mask-right {
   top:0px;
   left:0px;
-  width:100px;
-  height:100px;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  position:absolute;
+  z-index:21;
+  text-align:center;
+  cursor:pointer;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 150px;
+  color: white;
+  border-style: solid;
+  border-color: white;
+}
+div.mask-right:hover  span{
+    color:black;     
+}
+
+div.mask-right:hover {
+    background-color:white;    
+    cursor:pointer;  
+}
+
+.mask-left {
+  top:0px;
+  left:0px;
+  width:150px;
+  height:150px;
   background:darkSlateGray;
   border-radius:50%;
   position:absolute;
@@ -27,10 +70,19 @@
   line-height:120px;
   cursor:pointer;
 }
+div.radial-menu-left:hover  span{
+    color:black;     
+}
+
+div.radial-menu-left:hover {
+    background-color:white;    
+    cursor:pointer;  
+}
+
 .menu-item1 {
-  width:60%;
-  height:60%;
-  background-color:dimGray;
+  width:50%;
+  height:50%;
+  background-color:transparent;
   border-radius:50%;
   position:absolute;
   color:white;
@@ -41,40 +93,21 @@
   z-index:19;
   transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
-.menu-item1-mask{
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  background:darkSlateGray;
-  border-radius:50%;
-  position:absolute;
-  z-index:21;
-  color:white;
-  text-align:center;
-  line-height:120px;
-  cursor:pointer;
+
+div.menu-item1:hover  font{
+    color:black;     
 }
 
-.menu-item1-item11 {
-  width:100%;
-  height:100%;
-  background-color:#45c628;
-  border-radius:50%;
-  position:absolute;
-  color:white;
-  text-align:center;
-  line-height:70px;
-  top:0;
-  left:0;
-  z-index:18;
-  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+div.menu-item1:hover {
+    background-color:white;    
+    cursor:pointer;  
 }
+
 
 .menu-item3 {
-  width:60%;
-  height:60%;
-  background-color:dimGray;
+  width:50%;
+  height:50%;
+  background-color:transparent;
   border-radius:50%;
   position:absolute;
   color:white;
