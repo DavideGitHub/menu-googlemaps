@@ -1,0 +1,9 @@
+country: campo che indica la nazionalità
+product: indica
+
+type: 
+poiTitle: è il company name
+
+
+
+capabilities:??? da chiedere

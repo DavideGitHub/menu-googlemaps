@@ -19,17 +19,15 @@ $(document).ready(function() {
 	
     if (!active1) {
 		$(".radial-menu-right")
-			.find('.menu-item1')
+			.find('.menu-item-sc')
 			.css({'transform': 'translate(-105px,60px)',
-				  'border-style': 'solid',
-				  'border-color': 'white'});
+				  'display': 'inline'});
 		active1 = true;
 	} else if (active1){
 		$(".radial-menu-right")
-			.find('.menu-item1')
+			.find('.menu-item-sc')
 			.css({'transform': 'none',
-				  'border-style': 'none',
-				  'border-color': 'none'});
+				  'display': 'none'});
 		active1 = false;
 	}
     
@@ -53,10 +51,8 @@ $(document).ready(function() {
       
     });
 	
-	$('.menu-item1').on('mousedown touchstart', function() {
-		$(".overlay").hide();
-		$(".radial-menu-right").hide();
-		$(".radial-menu-left").hide();
+	$('.menu-item-sc').on('mousedown touchstart', function() {
+		enableServiceCentres();
 	});
 	
 	$('.menu-item3').on('mousedown touchstart', function() {

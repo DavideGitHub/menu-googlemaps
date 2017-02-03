@@ -1,0 +1,274 @@
+data={
+    "service-centres": {
+		
+		"america" : {
+			"countries" : {
+			
+				 pois: [
+						{	
+							type:"Excellent Service Centre",
+							country:"",
+							poiLink: "",
+							poiType: "ACADEMY",
+							poiEmail: "",
+							poiLatitude: "40.083199",
+							poiOthersPhone: "",
+							poiTitle: "AgustaWestland Philadelphia Training Academy",
+							poiFirstPhone: "+1 (215) 281-1400",
+							poiImage: "",
+							poiContent: "",
+							poiLongitude: "-75.002911",
+							poiAddress: "3050 Red Lion Road, PA 19114, Philadelpia, USA"
+						},
+						{	
+							type:"Authorized Service Centre",
+							country:"",
+							poiLink: "",
+							poiType: "RAPRESITTATIVE",
+							poiEmail: "",
+							poiLatitude: "35.65346",
+							poiOthersPhone: "",
+							poiTitle: "KAWASAKI",
+							poiFirstPhone: "",
+							poiImage: "",
+							poiContent: "",
+							poiLongitude: "139.761657",
+							poiAddress: "1-14-5, Kaigan, Minato-ku, Tokyo 105-8315, Japan"
+						}
+					]
+				
+			},
+			"products" : {
+			
+				 pois: [
+						{	type:"",
+							product:"",
+							poiLink: "",
+							poiType: "ACADEMY",
+							poiEmail: "",
+							poiLatitude: "40.083199",
+							poiOthersPhone: "",
+							poiTitle: "AgustaWestland Philadelphia Training Academy",
+							poiFirstPhone: "+1 (215) 281-1400",
+							poiImage: "",
+							poiContent: "",
+							poiLongitude: "-75.002911",
+							poiAddress: "3050 Red Lion Road, PA 19114, Philadelpia, USA"
+						},
+						{	
+							type:"",
+							product:"",
+							poiLink: "",
+							poiType: "RAPRESITTATIVE",
+							poiEmail: "",
+							poiLatitude: "35.65346",
+							poiOthersPhone: "",
+							poiTitle: "KAWASAKI",
+							poiFirstPhone: "",
+							poiImage: "",
+							poiContent: "",
+							poiLongitude: "139.761657",
+							poiAddress: "1-14-5, Kaigan, Minato-ku, Tokyo 105-8315, Japan"
+						}
+					]
+				
+			},
+			
+			}
+		},
+		"europe" : {
+			
+		},
+		"africa" : {
+		},
+		"middleEast":{
+		},
+		"asia":{
+		},	
+		"oceania":{
+		}			
+	},
+	"repair-centres" : {
+	
+		"america" : {
+			"countries" : {	
+						 pois: [
+								{	
+									country:"",
+									poiLink: "",
+									poiType: "ACADEMY",
+									poiEmail: "",
+									poiLatitude: "40.083199",
+									poiOthersPhone: "",
+									poiTitle: "AgustaWestland Philadelphia Training Academy",
+									poiFirstPhone: "+1 (215) 281-1400",
+									poiImage: "",
+									poiContent: "",
+									poiLongitude: "-75.002911",
+									poiAddress: "3050 Red Lion Road, PA 19114, Philadelpia, USA"
+								},
+								{	
+									country:"",
+									poiLink: "",
+									poiType: "RAPRESITTATIVE",
+									poiEmail: "",
+									poiLatitude: "35.65346",
+									poiOthersPhone: "",
+									poiTitle: "KAWASAKI",
+									poiFirstPhone: "",
+									poiImage: "",
+									poiContent: "",
+									poiLongitude: "139.761657",
+									poiAddress: "1-14-5, Kaigan, Minato-ku, Tokyo 105-8315, Japan"
+								}
+							]			
+			}
+		},
+		"europe" : {		
+		},
+		"africa" : {
+		},
+		"middleEast":{
+		},
+		"asia":{
+		},	
+		"oceania":{
+		}				
+	
+	
+	},
+	"logistic-centres" : {
+	
+		"america" : {
+			"countries" : {
+			
+						 pois: [
+								{	
+									country:"",
+									poiLink: "",
+									poiType: "ACADEMY",
+									poiEmail: "",
+									poiLatitude: "40.083199",
+									poiOthersPhone: "",
+									poiTitle: "AgustaWestland Philadelphia Training Academy",
+									poiFirstPhone: "+1 (215) 281-1400",
+									poiImage: "",
+									poiContent: "",
+									poiLongitude: "-75.002911",
+									poiAddress: "3050 Red Lion Road, PA 19114, Philadelpia, USA"
+								},
+								{	
+									country:"",
+									poiLink: "",
+									poiType: "RAPRESITTATIVE",
+									poiEmail: "",
+									poiLatitude: "35.65346",
+									poiOthersPhone: "",
+									poiTitle: "KAWASAKI",
+									poiFirstPhone: "",
+									poiImage: "",
+									poiContent: "",
+									poiLongitude: "139.761657",
+									poiAddress: "1-14-5, Kaigan, Minato-ku, Tokyo 105-8315, Japan"
+								}
+							]
+						
+					}
+		},
+		"europe" : {		
+		},
+		"africa" : {
+		},
+		"middleEast":{
+		},
+		"asia":{
+		},	
+		"oceania":{
+		}	
+	
+	},
+	"training-centres" : {
+	
+		"america" : {
+			"countries" : {
+			
+						 pois: [
+								{	
+									country:"",
+									poiLink: "",
+									poiType: "ACADEMY",
+									poiEmail: "",
+									poiLatitude: "40.083199",
+									poiOthersPhone: "",
+									poiTitle: "AgustaWestland Philadelphia Training Academy",
+									poiFirstPhone: "+1 (215) 281-1400",
+									poiImage: "",
+									poiContent: "",
+									poiLongitude: "-75.002911",
+									poiAddress: "3050 Red Lion Road, PA 19114, Philadelpia, USA"
+								},
+								{	
+									country:"",
+									poiLink: "",
+									poiType: "RAPRESITTATIVE",
+									poiEmail: "",
+									poiLatitude: "35.65346",
+									poiOthersPhone: "",
+									poiTitle: "KAWASAKI",
+									poiFirstPhone: "",
+									poiImage: "",
+									poiContent: "",
+									poiLongitude: "139.761657",
+									poiAddress: "1-14-5, Kaigan, Minato-ku, Tokyo 105-8315, Japan"
+								}
+							]
+						
+					}
+		},
+		"europe" : {		
+		},
+		"africa" : {
+		},
+		"middleEast":{
+		},
+		"asia":{
+		},	
+		"oceania":{
+		}		
+	
+	
+	},
+	"customer-support-people" : {
+	
+		"america" : {
+		},
+		"europe" : {		
+		},
+		"africa" : {
+		},
+		"middleEast":{
+		},
+		"asia":{
+		},	
+		"oceania":{
+		}	
+	
+	
+	},
+	"training-people" : {
+	
+		"america" : {
+		},
+		"europe" : {		
+		},
+		"africa" : {
+		},
+		"middleEast":{
+		},
+		"asia":{
+		},	
+		"oceania":{
+		}		
+	
+	}
+}

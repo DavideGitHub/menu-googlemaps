@@ -68,7 +68,8 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
    <div id="map-canvas-1" class="mappa" style="position: relative;overflow: hidden;"></div>
    <div class="overlay mappa"></div>
    <div class="radial-menu-right" style="z-index:2;">
-      <div class="menu-item1">
+      <div class="menu-item-sc">
+		<span color="white" style="font-size: 100%;background-color:inherit;">Service Centres</span>
       </div>
       <div class="menu-item3"></div>
       <div class="mask-right"  >
@@ -82,7 +83,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
    <div>
       <table style="width:inherit">
          <tr>
-            <th>
+            <th id="service-centres">
                <div>
                   <span style="color:red"> 
                   1 
@@ -90,7 +91,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
                   <span>Service Centres</span>
                </div>
             </th>
-            <th>
+            <th id="repair-centres">
                <div>
                   <span style="color:red"> 
                   1 
@@ -98,7 +99,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
                   <span>Repair Centres</span>
                </div>
             </th>
-            <th>
+            <th id="logistic-centres">
                <div>
                   <span style="color:red"> 
                   1 
@@ -106,7 +107,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
                   <span>Logistic Centres</span>
                </div>
             </th>
-            <th>
+            <th id="training-centres">
                <div>
                   <span style="color:red"> 
                   1 
@@ -114,7 +115,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
                   <span>Training Centres</span>
                </div>
             </th>
-            <th>
+            <th id="customer-support-people">
                <div>
                   <span style="color:red"> 
                   1 
@@ -122,7 +123,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
                   <span>Customer Support People</span>
                </div>
             </th>
-            <th>
+            <th id="training-people">
                <div>
                   <span style="color:red"> 
                   1 
@@ -133,7 +134,13 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
          </tr>
       </table>
    </div>
-   <div class="container" style="display:inline">
+   
+   
+   
+
+    
+   <!--FILTER PANEL-->
+    <div id="filter" class="container" style="display:none">
       <div class="panel-group" id="accordion">
          <div class="panel panel-default">
             <div class="panel-heading">
@@ -146,12 +153,8 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 			   
 			   
 			   
-                  <div id="mainmenu" class="row">
                      <div class="list-group panel col-xs-6 col-sm-2">
-                        <a href="#menupos1" class="list-group-item" data-toggle="collapse" data-parent="#mainmenu">Africa <span class="menu-ico-collapse"><i class="glyphicon glyphicon-chevron-down"></i></span></a>
-						
-						
-                        <div class="collapse pos-absolute" id="menupos1">
+
                            <a href="#submenu2" class="list-group-item sub-item" data-toggle="collapse" data-parent="#submenu2">Countries <span class=" menu-ico-collapse"><i class="glyphicon glyphicon-chevron-down"></i></span></a>
                            <div>
                               <a href="#submenu1" class="list-group-item sub-item" data-toggle="collapse" data-parent="#submenu1">Product <span class=" menu-ico-collapse"><i class="glyphicon glyphicon-chevron-down"></i></span></a>
@@ -167,16 +170,12 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
                                  <a href="#" class="list-group-item sub-sub-item" data-parent="#submenu1">Boooo</a>
                               </div>
                            </div>
-                        </div>
-						
+					
 						
                      </div>
-                  </div>
 				  
 				  
-				  
-				  
-				  
+				 				  
 				  
                </div>
             </div>
@@ -210,6 +209,10 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
          </div>
       </div>
    </div>
+    <!--END FILTER PANEL-->
+	
+	
+	
 </div>
 
 
@@ -224,12 +227,32 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 
 <script src="./javascript/menu.circle.js"></script>
 <script>
-$/*("#africa").click(function(){
-    $("#submenu").toggle("slow");
+
+
+$("#service-centres").click(function(){
+
+	enableServiceCentres();
+
+	
+	
+	
 });
-$("#countries").click(function(){
-    $("#subsubmenu").toggle("slow");
-});*/
+
+function enableServiceCentres() {
+    $("#repair-centres").css({"pointer-events": "none", "opacity": "0.4"});
+	$("#logistic-centres").css({"pointer-events": "none", "opacity": "0.4"});
+	$("#training-centres").css({"pointer-events": "none", "opacity": "0.4"});
+	$("#customer-support-people").css({"pointer-events": "none", "opacity": "0.4"});
+	$("#training-people").css({"pointer-events": "none", "opacity": "0.4"});
+	
+	$(".overlay").hide();
+	$(".radial-menu-right").hide();
+	$(".radial-menu-left").hide();
+	$("#filter").show("slow");
+	
+	//define to create
+	
+}
 </script>
 </body>
 </html>

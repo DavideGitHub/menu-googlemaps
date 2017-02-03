@@ -40,7 +40,6 @@
   z-index:21;
   text-align:center;
   cursor:pointer;
-  text-align: center;
   vertical-align: middle;
   line-height: 150px;
   color: white;
@@ -76,32 +75,37 @@ div.radial-menu-left:hover  span{
 
 div.radial-menu-left:hover {
     background-color:white;    
-    cursor:pointer;  
 }
 
-.menu-item1 {
+.menu-item-sc {
   width:50%;
   height:50%;
   background-color:transparent;
   border-radius:50%;
+  border-style: solid;
+  border-color: white;
+  display:none;
   position:absolute;
+  padding:8%;
   color:white;
   text-align:center;
-  line-height:70px;
+  line-height:20px;
   top:25%;
   left:25%;
   z-index:19;
   transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 
-div.menu-item1:hover  font{
-    color:black;     
-}
 
-div.menu-item1:hover {
+div.menu-item-sc:hover {
     background-color:white;    
     cursor:pointer;  
 }
+
+div.menu-item-sc:hover span {
+    color:black;     
+}
+
 
 
 .menu-item3 {
