@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="./dataNew.json"></script>
+<script>
+var pois = data;
+
+
+function parsingJSon() {
+	
+	/*var obj = JSON.parse(data);*/	
+
+	for(centres in pois){
+		pois[centres].length;
+	
+	
+	}
+	
+	var totalSC = 0;	
+	for(region in pois['service-centres']){
+		totalSC = totalSC + service_centres["america"].length;
+		
+		for(product in region['product']){
+			
+			totalSC = totalSC +	product[].length;	
+		
+		}
+		
+	}
+	
+	var totalRC = 0;	
+	for(region in pois['repair-centres']){
+		totalRC = totalRC + service_centres[region].length;
+	}
+	
+	alert(totalSC);
+	alert(totalRC);
+	//count number of Service Centres
+	
+}
+</script>
+</head>
+<body>
+<a href="" id="parsing" onclick="parsingJSon()">parsing json</a>
+</body>

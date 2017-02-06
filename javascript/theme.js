@@ -1,6 +1,6 @@
 
 
-function getGoogleMaps(centerLat, centerLon, mapsZoom, idDivMap, pois, centerAddress) {
+function getGoogleMapsNewWidget(centerLat, centerLon, mapsZoom, idDivMap, pois, centerAddress) {
 	var mainIcon = "./images/custom/mainMarker.png";
 	var abroadIcon = "./images/custom/abroadMarker.png";
 	var rapresentativeIcon = "./images/custom/rapresentativeMarker.png";
@@ -334,7 +334,7 @@ function getGoogleMaps(centerLat, centerLon, mapsZoom, idDivMap, pois, centerAdd
 						bounds.extend(pos);
 						map.fitBounds(bounds);	
 
-						var contentString = "<h2>" + poi.poiTitle + "</h2>";
+						var contentString = "<h2 style='color:red'>" + poi.poiTitle + "</h2>";
 						contentString += "<div class=\"gmdleft\">";
 						contentString += "<p>" + poi.poiAddress + "</p>";
 						if (poi.poiFirstPhone){

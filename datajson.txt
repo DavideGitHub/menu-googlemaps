@@ -1,9 +1,15 @@
-country: campo che indica la nazionalità
-product: indica
+tutte le categorie contengono il campo 
+type
+country:    campo visualizzabile nel pannello di filtraggio
 
-type: 
-poiTitle: è il company name
+per i "Centres"
+poiTitle (potrebbe diventare un nome): indica il company name
+capability: informazione visualizzata nel dettaglio del POI
+
+"Service Centres:"
+product: 	indica il prodotto visibile nel pannello di filtraggio.
+
+per i "People"
+poiTitle (potrebbe diventare un nome): rappresenta il nome
 
 
-
-capabilities:??? da chiedere

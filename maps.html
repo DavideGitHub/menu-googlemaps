@@ -58,7 +58,7 @@
 var pois= data;
 
 function initializeMaps() {
-	getGoogleMaps("","","10","map-canvas-1",pois,"");
+	getGoogleMapsNewWidget("","","10","map-canvas-1",pois,"");
 }
 
 google.maps.event.addDomListener(window, "load", initializeMaps);
@@ -85,49 +85,37 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
          <tr>
             <th id="service-centres">
                <div>
-                  <span style="color:red"> 
-                  1 
-                  </span> 
+                  <span id="service-centres-num" style="color:red"></span> 
                   <span>Service Centres</span>
                </div>
             </th>
             <th id="repair-centres">
                <div>
-                  <span style="color:red"> 
-                  1 
-                  </span> 
+                  <span id="repair-centres-num" style="color:red"></span> 
                   <span>Repair Centres</span>
                </div>
             </th>
             <th id="logistic-centres">
                <div>
-                  <span style="color:red"> 
-                  1 
-                  </span> 
+                  <span id="logistic-centres-num" style="color:red"></span> 
                   <span>Logistic Centres</span>
                </div>
             </th>
             <th id="training-centres">
                <div>
-                  <span style="color:red"> 
-                  1 
-                  </span> 
+                  <span id="training-centres-num" style="color:red"></span> 
                   <span>Training Centres</span>
                </div>
             </th>
             <th id="customer-support-people">
                <div>
-                  <span style="color:red"> 
-                  1 
-                  </span> 
+                  <span id="customer-support-people-num" style="color:red"></span> 
                   <span>Customer Support People</span>
                </div>
             </th>
             <th id="training-people">
                <div>
-                  <span style="color:red"> 
-                  1 
-                  </span> 
+                  <span id="training-people-num" style="color:red"></span> 
                   <span>Training People</span>
                </div>
             </th>
@@ -140,7 +128,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 
     
    <!--FILTER PANEL-->
-    <div id="filter" class="container" style="display:none">
+    <div id="filter" class="" style="display:none">
       <div class="panel-group" id="accordion">
          <div class="panel panel-default">
             <div class="panel-heading">
@@ -227,6 +215,17 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 
 <script src="./javascript/menu.circle.js"></script>
 <script>
+$(document).ready(function(){
+
+	$("#service-centres-num").text("1");
+	$("#repair-centres-num").text("2");	
+	$("#logistic-centres-num").text("3");	
+	$("#training-centres-num").text("4");	
+	$("#customer-support-people-num").text("5");
+	$("#training-people-num").text("6");
+	
+});
+
 
 
 $("#service-centres").click(function(){
@@ -252,7 +251,11 @@ function enableServiceCentres() {
 	
 	//define to create
 	
+	
+	
 }
+
+
 </script>
 </body>
 </html>
