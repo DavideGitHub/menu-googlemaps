@@ -29,7 +29,7 @@
  
  .panel-scope{
  	float: left;
-	width: 25%;
+	/*width: 25%;*/
 	border: solid;
 	height: 100%;
 }
@@ -81,31 +81,27 @@ function collapseFoglia(idToCollapse){
       <div id="AFRICA" class="panel-collapse" style="display:none">
         <div class="panel-body">
 			<div class="panel-scope">
-			  <div><a href="#" onclick="collapseCountries(countries)" >Countries</a></div>
+			<div style="float: left;">
+			  <div>
+				<a href="#" onclick="collapseCountries(countries)" >Countries</a>
+				<div id="countries" class="panel-scope">
+					<div><a href="#">Marocco</a></div>
+					<div><a href="#">Nigeria</a></div>
+					<div><a href="#">Dummy link text</a></div>
+					<div><a href="#">Republic of South Africa</a></div>
+				</div>
+			  
+			  
+			  </div>
 			  <div><a href="#" onclick="collapseProducts(products)">Products</a></div>
+			</div>  
+			 
 			  
 			</div>
 			
-			<div id="countries" class="panel-scope" style="display:none">
-			  <div><a href="#">Marocco</a></div>
-			  <div><a href="#">Nigeria</a></div>
-			  <div><a href="#">Dummy link text</a></div>
-			  <div><a href="#">Republic of South Africa</a></div>
-			</div>
-			<div id="products" class="panel-scope" style="display:none">
-			  <div><a href="#" onclick="collapseFoglia(abModels)" >AB Models</a></div>
-			  <div><a href="#">Aw109/as119</a></div>
-			  <div><a href="#">aw139</a></div>
-			</div>
+
 			
-			<div id="abModels" class="panel-scope" style="display:none">
-			  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-			  </div>
-			  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.					
-			  </div>
-			</div>
+
 		</div>
       </div>
     </div>

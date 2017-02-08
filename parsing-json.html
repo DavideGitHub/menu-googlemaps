@@ -17,7 +17,10 @@ function parsingJSon() {
 	}
 	
 	var totalSC = 0;	
-	for(region in pois['service-centres']){
+	var serviceCentres = pois['service-centres'];
+	var america = serviceCentres["america"];
+	var products = america["product"];
+	/*for(region in pois['service-centres']){
 		totalSC = totalSC + service_centres["america"].length;
 		
 		for(product in region['product']){
@@ -26,15 +29,13 @@ function parsingJSon() {
 		
 		}
 		
-	}
+	}*/
 	
-	var totalRC = 0;	
+	/*var totalRC = 0;	
 	for(region in pois['repair-centres']){
 		totalRC = totalRC + service_centres[region].length;
-	}
+	}*/
 	
-	alert(totalSC);
-	alert(totalRC);
 	//count number of Service Centres
 	
 }
