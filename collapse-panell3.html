@@ -33,11 +33,39 @@
 	border: solid;
 	height: 100%;
 }
+ .countries{
+    border-left-color: #ddd;
+    border-left-style: solid;
+    border-left-width: 1px;
+ }
+ 
+ .products{
+    border-left-color: #ddd;
+    border-left-style: solid;
+    border-left-width: 1px;
+ }
+ 
+ .foglia{
+    border-left-color: #ddd;
+    border-left-style: solid;
+    border-left-width: 1px;
+	float: left;
+	width:80%;
+ }
  
  /*.panel-title > a:active{
 	color:red;
  }*/
  
+ /*li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}*/
+
+a:hover, .dropdown:hover {
+    background-color: red;
+}
+
+
 </style> 
   
   
@@ -47,23 +75,29 @@ function collapse(idToCollapse){
 
   $(".panel-collapse").not( idToCollapse).hide("slow");
   $(idToCollapse).toggle("slow");
+  $(".foglia").hide("slow");
+  $(".products").hide("slow");
+  $(".countries").hide("slow");
 }
 
 function collapseCountries(idToCollapse){
 
-  $(idToCollapse).toggle();
-  $("#products").hide();
+  $("#products-"+idToCollapse).hide();
+  $("#countries-"+idToCollapse).show();
+  $(".foglia").hide();
 }
 
 function collapseProducts(idToCollapse){
 
-  $(idToCollapse).toggle();
-  $("#countries").hide();
+  $("#products-"+idToCollapse).show();
+  $("#countries-"+idToCollapse).hide();
+  $(".foglia").hide();
 }
 
 function collapseFoglia(idToCollapse){
 
-  $(idToCollapse).toggle("slow");
+  $(idToCollapse).show();
+  $(".foglia").not(idToCollapse).hide();
 }
 </script>
 </head>
@@ -78,45 +112,48 @@ function collapseFoglia(idToCollapse){
           <a href="#" id="africalink" onclick="collapse(AFRICA)" data-parent="">AFRICA</a>
         </h4>
       </div>
-      <div id="AFRICA" class="panel-collapse" style="display:none">
+      
+      <div id="AFRICA" class="panel-collapse" style="display:none;">
         <div class="panel-body">
-			<div class="panel-scope">
-			  <div><a href="#" onclick="collapseCountries(countries)" >Countries</a></div>
-			  <div><a href="#" onclick="collapseProducts(products)">Products</a></div>
-			  
-			</div>
-			
-			<div id="countries" class="panel-scope" style="display:none">
-			  <div><a href="#">Marocco</a></div>
-			  <div><a href="#">Nigeria</a></div>
-			  <div><a href="#">Dummy link text</a></div>
-			  <div><a href="#">Republic of South Africa</a></div>
-			</div>
-			<div id="products" style="display:none;">
-				<div style="float: left;width:20%;">
-					  <div><a href="#" onclick="collapseFoglia(abModels)" >AB Models</a></div>
-					  <div><a href="#" onclick="collapseFoglia(Aw109)">Aw109/as119</a></div>
-					  <div><a href="#">aw139</a></div>
-				</div>
+		<div class="" style="float: left;width:15%;">
+			  <div><a href="#" onclick="collapseCountries('AFRICA')">Countries</a></div>
+			  <div><a href="#" onclick="collapseProducts('AFRICA')">Products</a></div>
+		</div>
+		<div id="countries-AFRICA" class="countries" style="display:none;float:left; width: 70%;">
+			  <div style="float: left;width:20%;">
+				  <div><a href="#">Marocco</a></div>
+				  <div><a href="#">Nigeria</a></div>
+				  <div><a href="#">Dummy link text</a></div>
+				  <div><a href="#">Republic of South Africa</a></div>
+			  </div>
+		</div>
+		
+		<div id="products-AFRICA" class="products" style="float:left; width: 70%;" style="display:none">
+						<div style="float: left;width:20%;">
+							  <div><a href="#" onclick="collapseFoglia('#products-AFRICA-abModels')">AB Models</a></div>
+							  <div><a href="#" onclick="collapseFoglia('#products-AFRICA-Aw109')">Aw109/as119</a></div>
+							  <div><a href="#" onclick="collapseFoglia('')">aw139</a></div>
+						</div>
 
-				<div id="abModels" class="panel-scope" style="display:none">
-					  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models
-					  </div>
-					  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models				
-					  </div>
-				</div>
+						<div  id="products-AFRICA-abModels" class="foglia" style="display:none;">
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models
+							  </div>
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models				
+							  </div>
+						</div>
 
-				<div id="Aw109" class="panel-scope" style="display:none">
-					  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models
-					  </div>
-					  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models				
-					  </div>
-				</div>				
-			  
+						<div id="products-AFRICA-Aw109" class="foglia" style="display:none;">
+							  <div>Aw109 ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models
+							  </div>
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models				
+							  </div>
+						</div>				
+					  
 
-			</div>
-			
-
+		</div>
+		
+		
+		
 		</div>
       </div>
     </div>
@@ -126,10 +163,48 @@ function collapseFoglia(idToCollapse){
           <a href="#" onclick="collapse(AMERICAS)" >AMERICAS</a>
         </h4>
       </div>
-      <div id="AMERICAS" class="panel-collapse" style="display:none">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      <div id="AMERICAS" class="panel-collapse" style="display:none;">
+        <div class="panel-body">
+		<div class="" style="float: left;width:15%;">
+			  <div><a href="#" onclick="collapseCountries('AMERICAS')">Countries</a></div>
+			  <div><a href="#" onclick="collapseProducts('AMERICAS')">Products</a></div>
+		</div>
+		<div id="countries-AMERICAS" class="countries" style="display:none;float:left; width: 70%;">
+			  <div style="float: left;width:20%;">
+				  <div><a href="#">Marocco</a></div>
+				  <div><a href="#">Nigeria</a></div>
+				  <div><a href="#">Dummy link text</a></div>
+				  <div><a href="#">Republic of South Africa</a></div>
+			  </div>
+		</div>
+		
+		<div id="products-AMERICAS" class="products" style="float:left; width: 70%;" style="display:none">
+						<div style="float: left;width:20%;">
+							  <div><a href="#" onclick="collapseFoglia('#products-AMERICAS-abModels')">AB Models</a></div>
+							  <div><a href="#" onclick="collapseFoglia('#products-AMERICAS-Aw109')">Aw109/as119</a></div>
+							  <div><a href="#" onclick="collapseFoglia('')">aw139</a></div>
+						</div>
+
+						<div  id="products-AMERICAS-abModels" class="foglia" style="display:none;">
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models
+							  </div>
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models				
+							  </div>
+						</div>
+
+						<div id="products-AMERICAS-Aw109" class="foglia" style="display:none;">
+							  <div>Aw109 ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models
+							  </div>
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models				
+							  </div>
+						</div>				
+					  
+
+		</div>
+		
+		
+		
+		</div>
       </div>
     </div>
     <div class="">
