@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+  <script src="./jquery/jquery.min-1.9.1.js"></script>
+  <!--script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script-->
+
+<style>
+
+.panel-title-region {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+
+.panel-heading-region{
+    border-bottom-color: #ddd;
+    border-bottom-style: solid;
+    border-bottom-width: 1px; 
+	opacity: 0.5;
+	padding: 10px 15px;
+	width:15%;
+ }
+ 
+ .panel-body-region:before,
+ .panel-body-region:after,{
+  display: table;
+  content: " ";
+
+  }
+ 
+ .panel-collapse-region .panel-body-region {
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  padding-bottom: 15px;
+}
+ 
+ .panel-scope{
+ 	float: left;
+	width: 25%;
+	border: solid;
+	height: 100%;
+}
+ .countries{
+    border-left-color: #ddd;
+    border-left-style: solid;
+    border-left-width: 1px;
+ }
+ 
+ .products{
+    border-left-color: #ddd;
+    border-left-style: solid;
+    border-left-width: 1px;
+ }
+ 
+ .foglia{
+    border-left-color: #ddd;
+    border-left-style: solid;
+    border-left-width: 1px;
+	float: left;
+	width:80%;
+ }
+ 
+ .panel-heading a {
+  opacity: 0.5;
+ }
+ 
+ .countries a{
+  opacity: 0.5;
+ }
+ 
+ .products a{
+  opacity: 0.5;
+ }
+
+a:hover, .dropdown:hover {
+    opacity: 1;
+}
+
+.container-filter {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1200px)
+.container-filter {
+    width: 1170px;
+}
+@media (min-width: 992px)
+.container-filter {
+    /* width: 970px; */
+}
+@media (min-width: 768px)
+.container-filter {
+    width: 750px;
+}
+</style> 
+  
+  
+<script>
+
+
+function collapse(idToCollapse){
+
+  $(".panel-collapse-region").not( idToCollapse).hide("slow");
+  $(idToCollapse).toggle("slow");
+  $(".foglia").hide("slow");
+  $(".products").hide("slow");
+  $(".countries").hide("slow");
+}
+
+function collapseCountries(idToCollapse){
+
+  $("#products-"+idToCollapse).hide();
+  $("#countries-"+idToCollapse).show();
+  $(".foglia").hide();
+}
+
+function collapseProducts(idToCollapse){
+
+  $("#products-"+idToCollapse).show();
+  $("#countries-"+idToCollapse).hide();
+  $(".foglia").hide();
+}
+
+function collapseFoglia(idToCollapse){
+
+  $(idToCollapse).show();
+  $(".foglia").not(idToCollapse).hide();
+
+}
+
+
+
+</script>
+</head>
+
+<body>
+<div style="background-color:blue;"></div>
+
+<a href="#" onclick='$("#filter-service-centres").toggle("slow");'> open service centres</a>
+<div id="filter-service-centres" class="container" style="display:none" >
+  <div class="" id="accordion2">
+    <div class="">
+      <div class="panel-heading-region">
+        <h4 class="panel-title">
+          <a href="#" id="africalink" onclick="collapse(AFRICA)" data-parent="">AFRICA</a>
+        </h4>
+      </div>
+      
+      <div id="AFRICA" class="panel-collapse-region" style="display:none;">
+        <div class="panel-body-region">
+		<div  class="" style="float: left;width:15%;">
+			  <div><a href="#" style="opacity:0.5;" onclick="collapseCountries('AFRICA')">Countries</a></div>
+			  <div><a href="#" style="opacity:0.5;" onclick="collapseProducts('AFRICA')">Products</a></div>
+		</div>
+		<div id="countries-AFRICA" class="countries" style="display:none;float:left; width: 70%;">
+			  <div style="float: left;width:20%;">
+				  <div><a href="#">Marocco</a></div>
+				  <div><a href="#">Nigeria</a></div>
+				  <div><a href="#">Dummy link text</a></div>
+				  <div><a href="#">Republic of South Africa</a></div>
+			  </div>
+		</div>
+		
+		<div id="products-AFRICA" class="products" style="float:left; width: 70%;" style="display:none">
+						<div style="float: left;width:20%;">
+							  <div><a href="#" onclick="collapseFoglia('#products-AFRICA-abModels')">AB Models</a></div>
+							  <div><a href="#" onclick="collapseFoglia('#products-AFRICA-Aw109')">Aw109/as119</a></div>
+						</div>
+
+						<div  id="products-AFRICA-abModels" class="foglia" style="display:none;">
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models
+							  </div>
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models				
+							  </div>
+						</div>
+
+						<div id="products-AFRICA-Aw109" class="foglia" style="display:none;">
+							  <div>Aw109 ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models
+							  </div>
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models				
+							  </div>
+						</div>				
+					  
+
+		</div>
+		
+		
+		
+		</div>
+      </div>
+    </div>
+    <div class="">
+      <div class="panel-heading-region">
+        <h4 class="panel-title">
+          <a href="#" onclick="collapse(AMERICAS); selectRegion();" >AMERICAS</a>
+        </h4>
+      </div>
+      <div id="AMERICAS" class="panel-collapse-region" style="display:none;">
+        <div class="panel-body-region panel-body">
+		<div class="" style="float: left;width:15%;">
+			  <div><a href="#" style="opacity:0.5;"  id="link-countries-AMERICAS" onclick="collapseCountries('AMERICAS');selectCountries('AMERICAS');">Countries</a></div>
+			  <div><a href="#" style="opacity:0.5;"  id="link-products-AMERICAS" onclick="collapseProducts('AMERICAS'); selectProducts('AMERICAS');">Products</a></div>
+		</div>
+		<div id="countries-AMERICAS" class="countries" style="display:none;float:left; width: 70%;">
+			  <div style="float: left;width:20%;">
+				  <div><a href="#">Marocco</a></div>
+				  <div><a href="#">Nigeria</a></div>
+				  <div><a href="#">Dummy link text</a></div>
+				  <div><a href="#">Republic of South Africa</a></div>
+			  </div>
+		</div>
+		
+		<div id="products-AMERICAS" class="products" style="float:left; width: 70%;" style="display:none">
+						<div style="float: left;width:20%;" class="link-products">
+							  <div><a id="link-products-AMERICAS-abModels" href="#" onclick="collapseFoglia('#products-AMERICAS-abModels');selectLinkProducts(this.id);">AB Models</a></div>
+							  <div><a id="link-products-AMERICAS-Aw109" href="#" onclick="collapseFoglia('#products-AMERICAS-Aw109');selectLinkProducts(this.id);">Aw109/as119</a></div>
+						</div>
+
+						<div  id="products-AMERICAS-abModels" class="foglia" style="display:none;">
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models
+							  </div>
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models				
+							  </div>
+						</div>
+
+						<div id="products-AMERICAS-Aw109" class="foglia" style="display:none;">
+							  <div>Aw109 ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models
+							  </div>
+							  <div>AB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB ModelsAB Models				
+							  </div>
+						</div>				
+					  
+
+		</div>
+		
+		
+		
+		</div>
+      </div>
+    </div>
+    <div class="">
+      <div class="panel-heading-region">
+        <h4 class="panel-title-region">
+          <a href="#" onclick="collapse(ASIA)">ASIA</a>
+        </h4>
+      </div>
+      <div id="ASIA" class="panel-collapse-region" style="display:none">
+        <div class="panel-body-region">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<script>
+
+function selectLinkProducts(idLink){
+
+  $("#"+idLink).css("opacity", "1");
+  $(".link-products a").not("#"+idLink).css("opacity", "0.5");
+}
+
+function selectProducts(idLink){
+  var id = "#link-products-"+idLink;
+  $(id).css("opacity", "1");
+  $("#"+idLink+" a").not(id).css("opacity", "0.5");
+}
+
+function selectCountries(idLink){
+
+  var id = "#link-countries-"+idLink;
+  $(id).css("opacity", "1");
+  $("#"+idLink+" a").not(id).css("opacity", "0.5");
+}
+
+</script>
+    
+</body>
+</html>

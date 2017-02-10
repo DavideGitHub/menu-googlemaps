@@ -3,28 +3,40 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" />
+  <!--link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" /-->
+  <link rel="stylesheet" href="./css/panel-body-region.css" />
   <script src="./jquery/jquery.min-1.9.1.js"></script>
-  <!--script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script-->
 
 <style>
-.panel-heading{
-	width:15%;
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.62857143;
+    color: #333;
+    background-color: #fff;
 }
 
-.panel-heading{
+.panel-title-region {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+
+.panel-heading-region{
     border-bottom-color: #ddd;
     border-bottom-style: solid;
     border-bottom-width: 1px; 
 	opacity: 0.5;
+	padding: 10px 15px;
+	width:15%;
  }
 
- .panel-body{
-    border-bottom-color: #ddd;
-    border-bottom-style: solid;
-    border-bottom-width: 1px; 
-	/*float: left;*/
- }
+ .panel-collapse-region .panel-body-region {
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  padding-bottom: 15px;
+}
  
  .panel-scope{
  	float: left;
@@ -49,7 +61,7 @@
     border-left-style: solid;
     border-left-width: 1px;
 	float: left;
-	width:80%;
+	width:70%;
  }
  
  .panel-heading a {
@@ -68,7 +80,25 @@ a:hover, .dropdown:hover {
     opacity: 1;
 }
 
+.container-filter {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
+@media (min-width: 1200px)
+.container-filter {
+    width: 1170px;
+}
+@media (min-width: 992px)
+.container-filter {
+     width: 970px; 
+}
+@media (min-width: 768px)
+.container-filter {
+    width: 750px;
+}
 </style> 
   
   
@@ -77,7 +107,7 @@ a:hover, .dropdown:hover {
 
 function collapse(idToCollapse){
 
-  $(".panel-collapse").not( idToCollapse).hide("slow");
+ $(".panel-collapse-region").not( idToCollapse).hide("slow");
   $(idToCollapse).toggle("slow");
   $(".foglia").hide("slow");
   $(".products").hide("slow");
@@ -114,17 +144,17 @@ function collapseFoglia(idToCollapse){
 <div style="background-color:blue;"></div>
 
 <a href="#" onclick='$("#filter-service-centres").toggle("slow");'> open service centres</a>
-<div id="filter-service-centres" class="container" style="display:none" >
-  <div class="" id="accordion2">
+<div id="filter-service-centres" class="container-filter" style="display:none" >
+  <div class="">
     <div class="">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a href="#" id="africalink" onclick="collapse(AFRICA)" data-parent="">AFRICA</a>
+      <div class="panel-heading-region">
+        <h4 class="panel-title-region">
+          <a href="#" id="africalink" onclick="collapse(AFRICA)">AFRICA</a>
         </h4>
       </div>
       
-      <div id="AFRICA" class="panel-collapse" style="display:none;">
-        <div class="panel-body">
+      <div id="AFRICA" class="panel-collapse-region" style="display:none;">
+        <div class="panel-body-region">
 		<div  class="" style="float: left;width:15%;">
 			  <div><a href="#" style="opacity:0.5;" onclick="collapseCountries('AFRICA')">Countries</a></div>
 			  <div><a href="#" style="opacity:0.5;" onclick="collapseProducts('AFRICA')">Products</a></div>
@@ -167,13 +197,13 @@ function collapseFoglia(idToCollapse){
       </div>
     </div>
     <div class="">
-      <div class="panel-heading">
-        <h4 class="panel-title">
+      <div class="panel-heading-region">
+        <h4 class="panel-title-region">
           <a href="#" onclick="collapse(AMERICAS); selectRegion();" >AMERICAS</a>
         </h4>
       </div>
-      <div id="AMERICAS" class="panel-collapse" style="display:none;">
-        <div class="panel-body">
+      <div id="AMERICAS" class="panel-collapse-region" style="display:none">
+        <div class="panel-body-region">
 		<div class="" style="float: left;width:15%;">
 			  <div><a href="#" style="opacity:0.5;"  id="link-countries-AMERICAS" onclick="collapseCountries('AMERICAS');selectCountries('AMERICAS');">Countries</a></div>
 			  <div><a href="#" style="opacity:0.5;"  id="link-products-AMERICAS" onclick="collapseProducts('AMERICAS'); selectProducts('AMERICAS');">Products</a></div>
@@ -216,13 +246,13 @@ function collapseFoglia(idToCollapse){
       </div>
     </div>
     <div class="">
-      <div class="panel-heading">
-        <h4 class="panel-title">
+      <div class="panel-heading-region">
+        <h4 class="panel-title-region">
           <a href="#" onclick="collapse(ASIA)">ASIA</a>
         </h4>
       </div>
-      <div id="ASIA" class="panel-collapse" style="display:none">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      <div id="ASIA" class="panel-collapse-region" style="display:none">
+        <div class="panel-body-region">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
       </div>
