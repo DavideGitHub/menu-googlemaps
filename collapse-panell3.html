@@ -126,12 +126,12 @@ function collapseFoglia(idToCollapse){
       <div id="AFRICA" class="panel-collapse" style="display:none;">
         <div class="panel-body">
 		<div  class="" style="float: left;width:15%;">
-			  <div><a href="#" onclick="collapseCountries('AFRICA')">Countries</a></div>
-			  <div><a href="#" onclick="collapseProducts('AFRICA')">Products</a></div>
+			  <div><a href="#" style="opacity:0.5;" onclick="collapseCountries('AFRICA')">Countries</a></div>
+			  <div><a href="#" style="opacity:0.5;" onclick="collapseProducts('AFRICA')">Products</a></div>
 		</div>
 		<div id="countries-AFRICA" class="countries" style="display:none;float:left; width: 70%;">
 			  <div style="float: left;width:20%;">
-				  <div><a href="#" >Marocco</a></div>
+				  <div><a href="#">Marocco</a></div>
 				  <div><a href="#">Nigeria</a></div>
 				  <div><a href="#">Dummy link text</a></div>
 				  <div><a href="#">Republic of South Africa</a></div>
@@ -142,7 +142,6 @@ function collapseFoglia(idToCollapse){
 						<div style="float: left;width:20%;">
 							  <div><a href="#" onclick="collapseFoglia('#products-AFRICA-abModels')">AB Models</a></div>
 							  <div><a href="#" onclick="collapseFoglia('#products-AFRICA-Aw109')">Aw109/as119</a></div>
-							  <div><a href="#" onclick="collapseFoglia('')">aw139</a></div>
 						</div>
 
 						<div  id="products-AFRICA-abModels" class="foglia" style="display:none;">
@@ -170,14 +169,14 @@ function collapseFoglia(idToCollapse){
     <div class="">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a href="#" onclick="collapse(AMERICAS)" >AMERICAS</a>
+          <a href="#" onclick="collapse(AMERICAS); selectRegion();" >AMERICAS</a>
         </h4>
       </div>
       <div id="AMERICAS" class="panel-collapse" style="display:none;">
         <div class="panel-body">
 		<div class="" style="float: left;width:15%;">
-			  <div><a href="#" onclick="collapseCountries('AMERICAS')">Countries</a></div>
-			  <div><a href="#" onclick="collapseProducts('AMERICAS')">Products</a></div>
+			  <div><a href="#" style="opacity:0.5;"  id="link-countries-AMERICAS" onclick="collapseCountries('AMERICAS');selectCountries('AMERICAS');">Countries</a></div>
+			  <div><a href="#" style="opacity:0.5;"  id="link-products-AMERICAS" onclick="collapseProducts('AMERICAS'); selectProducts('AMERICAS');">Products</a></div>
 		</div>
 		<div id="countries-AMERICAS" class="countries" style="display:none;float:left; width: 70%;">
 			  <div style="float: left;width:20%;">
@@ -189,10 +188,9 @@ function collapseFoglia(idToCollapse){
 		</div>
 		
 		<div id="products-AMERICAS" class="products" style="float:left; width: 70%;" style="display:none">
-						<div style="float: left;width:20%;">
-							  <div><a id="link-abModels" href="#" onclick="collapseFoglia('#products-AMERICAS-abModels');selectLinkCountries('#link-abModels');">AB Models</a></div>
-							  <div><a href="#" onclick="collapseFoglia('#products-AMERICAS-Aw109')">Aw109/as119</a></div>
-							  <div><a href="#" onclick="collapseFoglia('')">aw139</a></div>
+						<div style="float: left;width:20%;" class="link-products">
+							  <div><a id="link-products-AMERICAS-abModels" href="#" onclick="collapseFoglia('#products-AMERICAS-abModels');selectLinkProducts(this.id);">AB Models</a></div>
+							  <div><a id="link-products-AMERICAS-Aw109" href="#" onclick="collapseFoglia('#products-AMERICAS-Aw109');selectLinkProducts(this.id);">Aw109/as119</a></div>
 						</div>
 
 						<div  id="products-AMERICAS-abModels" class="foglia" style="display:none;">
@@ -234,15 +232,25 @@ function collapseFoglia(idToCollapse){
 
 <script>
 
-function selectLinkCountries(idLink){
+function selectLinkProducts(idLink){
 
-  $(idLink).css("opacity", "1");
- 
+  $("#"+idLink).css("opacity", "1");
+  $(".link-products a").not("#"+idLink).css("opacity", "0.5");
 }
 
-$( "div" ).click(function() {
+function selectProducts(idLink){
+  var id = "#link-products-"+idLink;
+  $(id).css("opacity", "1");
+  $("#"+idLink+" a").not(id).css("opacity", "0.5");
+}
 
-});
+function selectCountries(idLink){
+
+  var id = "#link-countries-"+idLink;
+  $(id).css("opacity", "1");
+  $("#"+idLink+" a").not(id).css("opacity", "0.5");
+}
+
 </script>
     
 </body>
