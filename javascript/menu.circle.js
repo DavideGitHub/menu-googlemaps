@@ -33,17 +33,15 @@ $(document).ready(function() {
     
 	if (!active3) {
 		$(".radial-menu-right")
-			.find('.menu-item3')
+			.find('.menu-item-rc')
 			.css({'transform': 'translate(-119px,-30px)',
-				  'border-style': 'solid',
-				  'border-color': 'white'});
+				  'display': 'inline'});
 		active3 = true;
 	} else if(active3){
 		$(".radial-menu-right")
-			.find('.menu-item3')
+			.find('.menu-item-rc')
 			.css({'transform': 'none',
-				  'border-style': 'none',
-				  'border-color': 'none'});
+				  'display': 'none'});
 		active3 = false
 	}
 		
@@ -55,7 +53,7 @@ $(document).ready(function() {
 		enableServiceCentres();
 	});
 	
-	$('.menu-item3').on('mousedown touchstart', function() {
+	$('.menu-item-rc').on('mousedown touchstart', function() {
 	
 	});
 });

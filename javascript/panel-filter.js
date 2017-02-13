@@ -5,6 +5,12 @@ function selectLinkProducts(idLink){
   $(".link-products a").not("#"+idLink).css("opacity", "0.5");
 }
 
+function selectLinkCountries(idLink){
+
+  $("#"+idLink).css("opacity", "1");
+  $(".link-countries a").not("#"+idLink).css("opacity", "0.5");
+}
+
 function selectProducts(idLink){
   var id = "#link-products-"+idLink;
   $(id).css("opacity", "1");

@@ -106,12 +106,39 @@
 			  <div><a href="#" style="opacity:0.5;"  id="link-products-AMERICAS" onclick="collapseProducts('AMERICAS'); selectProducts('AMERICAS');">Products</a></div>
 		</div>
 		<div id="countries-AMERICAS" class="countries" style="display:none;float:left; width: 70%;">
-			  <div style="float: left;width:20%;">
-				  <div><a href="#">Marocco</a></div>
-				  <div><a href="#">Nigeria</a></div>
-				  <div><a href="#">Dummy link text</a></div>
-				  <div><a href="#">Republic of South Africa</a></div>
-			  </div>
+					  <div class="link-countries" style="float: left;width:20%;">
+						  <div><a id="link-countries-AMERICAS-Marocco" href="#" onclick="collapseFoglia('#countries-AMERICAS-Marocco');selectLinkCountries(this.id);">Marocco</a></div>
+						  <div><a id="link-countries-AMERICAS-Nigeria" onclick="collapseFoglia('#countries-AMERICAS-Nigeria');selectLinkCountries(this.id);" href="#">Nigeria</a></div>
+						  <div><a id="link-countries-AMERICAS-rsafrica" onclick="collapseFoglia('#countries-AMERICAS-rsafrica');selectLinkCountries(this.id);" href="#">Republic of South Africa</a></div>
+					  </div>
+					  
+					  <div  id="countries-AMERICAS-Marocco" class="foglia" style="display:none;">
+							  <div class="detail-poi" style="padding: 12px;">
+								  <p><b><font color="red">Marocco</font></b></p>
+								  <p><b>AW139 Maintenence, Parts and Quality support</b></p>
+								  <p>Aeroport International de Marrakech-Menara BP 13205- Marrakech- Marocco</p>
+								  <p>Phone +21 525 43 81 81</p>	
+								  <p>email: contact@heilconia-aerao.com</p>									  
+							  </div>
+					  </div>
+					  <div  id="countries-AMERICAS-Nigeria" class="foglia" style="display:none;">
+							  <div class="detail-poi" style="padding: 12px;">
+								  <p><b><font color="red">Nigeria</font></b></p>
+								  <p><b>AW139 Maintenence, Parts and Quality support</b></p>
+								  <p>Aeroport International de Marrakech-Menara BP 13205- Marrakech- Marocco</p>
+								  <p>Phone +21 525 43 81 81</p>	
+								  <p>email: contact@heilconia-aerao.com</p>									  
+							  </div>
+					  </div>
+					  <div  id="countries-AMERICAS-rsafrica" class="foglia" style="display:none;">
+							  <div class="detail-poi" style="padding: 12px;">
+								  <p><b><font color="red">Republic of South Africa</font></b></p>
+								  <p><b>AW139 Maintenence, Parts and Quality support</b></p>
+								  <p>Aeroport International de Marrakech-Menara BP 13205- Marrakech- Marocco</p>
+								  <p>Phone +21 525 43 81 81</p>	
+								  <p>email: contact@heilconia-aerao.com</p>									  
+							  </div>
+					  </div>
 		</div>
 		
 		<div id="products-AMERICAS" class="products" style="float:left; width: 70%;" style="display:none">
