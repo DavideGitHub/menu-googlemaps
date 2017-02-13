@@ -11,6 +11,43 @@ data= {
 					"poiEmail": "",
 					"poiLatitude": "40.083199",
 					"poiLongitude": "-75.002911",
+					"poiTitle": "AgustaWestland Philadelphia Training Academy....",
+					"poiPhone": "+1 (215) 281-1400",
+					"poiAddress": "3050 Red Lion Road, PA 19114, Philadelpia, USA"
+				}, {
+					"product" : "AW139",
+					"capability": "AW139........",
+					"type": "Authorized Service Centre",
+					"country": "Japan",
+					"poiType": "RAPRESITTATIVE",
+					"poiEmail": "",
+					"poiLatitude": "35.65346",
+					"poiLongitude": "139.761657",
+					"poiTitle": "KAWASAKI",
+					"poiPhone": "",
+					"poiAddress": "1-14-5, Kaigan, Minato-ku, Tokyo 105-8315, Japan"
+				},{
+					"product" : ["AW139", "AW109"],
+					"capability": ["AW139", "Maintenance, Parts and Quality support"],
+					"type": "Excellent Service Centre",
+					"country": "USA",
+					"poiType": "ACADEMY",
+					"poiEmail": "",
+					"poiLatitude": "40.083199",
+					"poiLongitude": "-75.002911",
+					"poiTitle": "AgustaWestland Philadelphia Training Academy",
+					"poiPhone": "+1 (215) 281-1400",
+					"poiAddress": "3050 Red Lion Road, PA 19114, Philadelpia, USA"
+				}],
+		"europe": [{
+					"product" : ["AW139", "AW109"],
+					"capability": ["AW139", "Maintenance, Parts and Quality support"],
+					"type": "Excellent Service Centre",
+					"country": "USA",
+					"poiType": "ACADEMY",
+					"poiEmail": "",
+					"poiLatitude": "40.083199",
+					"poiLongitude": "-75.002911",
 					"poiTitle": "AgustaWestland Philadelphia Training Academy",
 					"poiPhone": "+1 (215) 281-1400",
 					"poiAddress": "3050 Red Lion Road, PA 19114, Philadelpia, USA"
@@ -26,8 +63,7 @@ data= {
 					"poiTitle": "KAWASAKI",
 					"poiPhone": "",
 					"poiAddress": "1-14-5, Kaigan, Minato-ku, Tokyo 105-8315, Japan"
-				}],
-		"europe": {},	
+				}],	
 		"africa" : {},
 		"middleEast":{},
 		"asia":{},

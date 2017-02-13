@@ -2,24 +2,56 @@
 <html>
 <head>
 <script type="text/javascript" src="./dataNew.json"></script>
+<script type="text/javascript" src="./data2.json"></script>
+<script src="./javascript/lodash.js"></script>
 <script>
 var pois = data;
-
+var poisOld = dataOld;
+var object = { 'a': [{ 'b': { 'c': 3 } }] };
 
 function parsingJSon() {
 	
-	/*var obj = JSON.parse(data);*/	
+	console.log(_.get(object, 'a[0].b.c'));
+	console.log(_.get(pois, 'service-centres'));
+	
+	var listSC = [];
+	//get di tutte le service centres di america
+	var arrayScAmerica =_.get(pois, 'service-centres').america;
+	var scPoisAmerica = {"pois": arrayScAmerica };
+	
+	listSC.push.apply(listSC, arrayScAmerica);
+	
+	var arrayScEuropa =_.get(pois, 'service-centres').europe;
+	//---get di tutte le service centres 
+	listSC.push.apply(listSC, arrayScEuropa);
 
-	for(centres in pois){
+	var scPoisAfrica = {"pois": arrayScEuropa };
+	var scPois =  {"pois": listSC };
+	
+	
+	//----get di tutti product di una region
+	
+	//----get di tutte i country di una region
+	
+	
+	//---ricerca di un country 'USA'...di una specifica regione AMERICA
+	var temp = _.filter(arrayScAmerica, _.conforms({ 'country': function(n) {return n === 'USA';} }));
+	
+	console.log(scPois);
+	console.log(poisOld);
+	
+
+
+	/*for(centres in pois){
 		pois[centres].length;
 	
 	
-	}
+	}*/
 	
-	var totalSC = 0;	
+	/*var totalSC = 0;	
 	var serviceCentres = pois['service-centres'];
 	var america = serviceCentres["america"];
-	var products = america["product"];
+	var products = america["product"];*/
 	/*for(region in pois['service-centres']){
 		totalSC = totalSC + service_centres["america"].length;
 		

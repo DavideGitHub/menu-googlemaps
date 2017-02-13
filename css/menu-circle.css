@@ -3,8 +3,8 @@
   left:25%;
   position:absolute;
   display:block;
-  width:150px;
-  height:150px;
+  width:120px;
+  height:120px;
   background-color:transparent;
   border-radius:50%;
   z-index:20;
@@ -18,10 +18,8 @@
   left:55%;
   position:absolute;
   display:block;
-  width:150px;
-  height:150px;
-  border-style: solid;
-  border-color: white;
+  width:120px;
+  height:120px;
   background-color:transparent;
   border-radius:50%;
   z-index:20;
@@ -33,15 +31,15 @@
 .mask-right {
   top:0px;
   left:0px;
-  width:150px;
-  height:150px;
+  width:120px;
+  height:120px;
   border-radius:50%;
   position:absolute;
   z-index:21;
   text-align:center;
   cursor:pointer;
   vertical-align: middle;
-  line-height: 150px;
+  line-height: 120px;
   color: white;
   border-style: solid;
   border-color: white;
@@ -58,9 +56,8 @@ div.mask-right:hover {
 .mask-left {
   top:0px;
   left:0px;
-  width:150px;
-  height:150px;
-  background:darkSlateGray;
+  width:120px;
+  height:120px;
   border-radius:50%;
   position:absolute;
   z-index:21;
@@ -68,14 +65,19 @@ div.mask-right:hover {
   text-align:center;
   line-height:120px;
   cursor:pointer;
+  border-style: solid;
+  border-color: white;
 }
-div.radial-menu-left:hover  span{
+
+div.mask-left:hover  span{
     color:black;     
 }
 
-div.radial-menu-left:hover {
+div.mask-left:hover {
     background-color:white;    
+    cursor:pointer;  
 }
+
 
 .menu-item-sc {
   width:50%;
@@ -88,7 +90,7 @@ div.radial-menu-left:hover {
   position:absolute;
   color:white;
   text-align:center;
-  line-height:20px;
+  line-height:15px;
   top:25%;
   left:25%;
   z-index:19;
@@ -118,7 +120,7 @@ div.menu-item-sc:hover span {
   position:absolute;
   color:white;
   text-align:center;
-  line-height:20px;
+  line-height:15px;
   top:25%;
   left:25%;
   z-index:19;
@@ -130,5 +132,31 @@ div.menu-item-rc:hover {
 }
 
 div.menu-item-rc:hover span {
+    color:black;     
+}
+
+.menu-item-csp {
+  width:50%;
+  height:50%;
+  background-color:transparent;
+  border-radius:50%;
+  border-style: solid;
+  border-color: white;
+  display:none;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:15px;
+  top:25%;
+  left:25%;
+  z-index:19;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+div.menu-item-csp:hover {
+    background-color:white;    
+    cursor:pointer;  
+}
+
+div.menu-item-csp:hover span {
     color:black;     
 }
