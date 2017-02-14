@@ -11,6 +11,19 @@
 <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" /-->
 <link rel="stylesheet" href="./css/panel-filter.css" />
 <style>
+
+body{
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'LeagueGothicRegular';
+	font-size: 1.28em;
+	line-height: 1.7rem;
+	color: #524f4f;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-color: #dcddde;
+
+}
 .mappa{
 	width: 959px;
 	height: 419px;
@@ -23,8 +36,6 @@
 }
 
 .overlay {
-    /*opacity:0;
-    filter: alpha(opacity = 0);*/
     position:absolute;
     top:0; 
 	bottom:0; 
@@ -34,8 +45,6 @@
     display:block;
     z-index:2;
 	background-color: rgba(38, 37, 37, 0.46)
-	/*background:rgba(255,255,255,0.5);*/
-    /*background:transparent;*/
 }
 
 .mappa div table tr th{
@@ -51,6 +60,12 @@
 .mappa div table tr th .num-capability{
 	font-size: 200%;
 	display: block;
+	color: red;
+}
+
+.navigation-bar{
+	width:959px;
+	background-color: #fff;
 }
 
 
@@ -97,45 +112,45 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
       <div class="mask-left"  >
          <span color="white" style="font-size: 150%">People</span>
       </div>
-      <!--span color="white" style="font-size: 150%">People<span-->
-      <!--div class="mask-left"><i class="fa fa-home fa-3x"></i></div-->
    </div>
-   <div style="width:959px;">
+   
+   
+   <div class="navigation-bar">
       <table style="width:inherit">
          <tr>
             <th id="service-centres">
                <div>
-                  <span class="num-capability" id="service-centres-num" style="color:red"></span> 
+                  <span class="num-capability" id="service-centres-num"></span> 
                   <span>Service Centres</span>
                </div>
             </th>
             <th id="repair-centres">
                <div>
-                  <span class="num-capability" id="repair-centres-num" style="color:red"></span> 
+                  <span class="num-capability" id="repair-centres-num" ></span> 
                   <span>Repair Centres</span>
                </div>
             </th>
             <th id="logistic-centres">
                <div>
-                  <span class="num-capability" id="logistic-centres-num" style="color:red"></span> 
+                  <span class="num-capability" id="logistic-centres-num"></span> 
                   <span>Logistic Centres</span>
                </div>
             </th>
             <th id="training-centres" style="border-right: #ddd solid 1px;">
                <div>
-                  <span class="num-capability" id="training-centres-num" style="color:red"></span> 
+                  <span class="num-capability" id="training-centres-num"></span> 
                   <span>Training Centres</span>
                </div>
             </th>
             <th id="customer-support-people">
                <div>
-                  <span class="num-capability" id="customer-support-people-num" style="color:red"></span> 
+                  <span class="num-capability" id="customer-support-people-num"></span> 
                   <span>Customer Support People</span>
                </div>
             </th>
             <th id="training-people">
                <div>
-                  <span class="num-capability" id="training-people-num" style="color:red"></span> 
+                  <span class="num-capability" id="training-people-num"></span> 
                   <span>Training People</span>
                </div>
             </th>
@@ -148,24 +163,24 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 
     
    <!--FILTER PANEL-->
-  
+  <div style="padding:8px">
   <div id="filter" class="container-filter" style="display:none" >
   <div class="">
     <div class="">
       <div class="panel-heading-region">
         <h4 class="panel-title-region">
-          <a href="#" id="africalink" onclick="collapse(AFRICA)">AFRICA</a>
+          <a href="javascript:void(0)" class="linkRegion" id="africalink" onclick="collapse(AFRICA);selectLinkRegion(this.id);">AFRICA</a>
         </h4>
       </div>
       
       <div id="AFRICA" class="panel-collapse-region" style="display:none;">
         <div class="panel-body-region">
-		<div  class="" style="float: left;width:20%;">
-			  <div><a href="#" style="opacity:0.5;" onclick="collapseCountries('AFRICA')">Countries</a></div>
-			  <div><a href="#" style="opacity:0.5;" onclick="collapseProducts('AFRICA')">Products</a></div>
+		<div  class="link-countries" style="float: left;">
+			  <div><a href="javascript:void(0)" id="link-countries-AFRICA" style="opacity:0.5;" onclick="collapseCountries('AFRICA');  selectCountries('AFRICA');">Countries</a></div>
+			  <div><a href="javascript:void(0)" id="link-products-AFRICA" style="opacity:0.5;" onclick="collapseProducts('AFRICA'); selectProducts('AFRICA');">Products</a></div>
 		</div>
-		<div id="countries-AFRICA" class="countries" style="display:none;float:left; width: 70%;">
-			  <div style="float: left;width:20%;">
+		<div id="countries-AFRICA" class="countries" style="display:none;float:left; ">
+			  <div style="float: left;">
 				  <div><a href="#">Marocco</a></div>
 				  <div><a href="#">Nigeria</a></div>
 				  <div><a href="#">Dummy link text</a></div>
@@ -173,22 +188,22 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 			  </div>
 		</div>
 		
-		<div id="products-AFRICA" class="products" style="float:left; width: 70%;" style="display:none">
-						<div style="float: left;width:20%;">
-							  <div><a href="#" onclick="collapseFoglia('#products-AFRICA-abModels')">AB Models</a></div>
-							  <div><a href="#" onclick="collapseFoglia('#products-AFRICA-Aw109')">Aw109/as119</a></div>
+		<div id="products-AFRICA" class="products" style="float:left;" style="display:none">
+						<div style="float: left;" class="link-products">
+							  <div><a href="#" id="link-products-AFRICA-abModels" onclick="collapseFoglia('#products-AFRICA-abModels');selectLinkProducts(this.id);">AB Models</a></div>
+							  <div><a href="#" id="link-products-AFRICA-Aw109" onclick="collapseFoglia('#products-AFRICA-Aw109');selectLinkProducts(this.id);">Aw109/as119</a></div>
 						</div>
 
 						<div  id="products-AFRICA-abModels" class="foglia" style="display:none;">
 							  <div class="detail-poi" style="padding: 12px;">
-								  <p><b><font color="red">Heliconia Industries SRL</font></b></p>
+								  <p><b><font color="#E4002B">Heliconia Industries SRL</font></b></p>
 								  <p><b>AW139 Maintenence, Parts and Quality support</b></p>
 								  <p>Aeroport International de Marrakech-Menara BP 13205- Marrakech- Marocco</p>
 								  <p>Phone +21 525 43 81 81</p>	
 								  <p>email: contact@heilconia-aerao.com</p>									  
 							  </div>
 							  <div class="detail-poi" style="padding: 12px;">
-								  <p><b><font color="red">Heliconia Industries SRL</font></b></p>
+								  <p><b><font color="#E4002B">Heliconia Industries SRL</font></b></p>
 								  <p><b>AW139 Maintenence, Parts and Quality support</b></p>
 								  <p>Aeroport International de Marrakech-Menara BP 13205- Marrakech- Marocco</p>
 								  <p>Phone +21 525 43 81 81</p>	
@@ -198,14 +213,14 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 
 						<div id="products-AFRICA-Aw109" class="foglia" style="display:none;">
 							  <div class="detail-poi" style="padding: 12px;">
-								  <p><b><font color="red">Heliconia Industries SRL</font></b></p>
+								  <p><b><font color="#E4002B">Heliconia Industries SRL</font></b></p>
 								  <p><b>AW139 Maintenence, Parts and Quality support</b></p>
 								  <p>Aeroport International de Marrakech-Menara BP 13205- Marrakech- Marocco</p>
 								  <p>Phone +21 525 43 81 81</p>	
 								  <p>email: contact@heilconia-aerao.com</p>									  
 							  </div>
 							  <div class="detail-poi" style="padding: 12px;">
-								  <p><b><font color="red">Heliconia Industries SRL</font></b></p>
+								  <p><b><font color="#E4002B">Heliconia Industries SRL</font></b></p>
 								  <p><b>AW139 Maintenence, Parts and Quality support</b></p>
 								  <p>Aeroport International de Marrakech-Menara BP 13205- Marrakech- Marocco</p>
 								  <p>Phone +21 525 43 81 81</p>	
@@ -224,17 +239,17 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
     <div class="">
       <div class="panel-heading-region">
         <h4 class="panel-title-region">
-          <a href="#" onclick="collapse(AMERICAS); selectRegion();" >AMERICAS</a>
+		   <a href="javascript:void(0)" class="linkRegion" id="americalink" onclick="collapse(AMERICAS);selectLinkRegion(this.id);">AMERICAS</a>
         </h4>
       </div>
       <div id="AMERICAS" class="panel-collapse-region" style="display:none">
         <div class="panel-body-region">
-		<div class="" style="float: left;width:20%;">
-			  <div><a href="#" style="opacity:0.5;"  id="link-countries-AMERICAS" onclick="collapseCountries('AMERICAS');selectCountries('AMERICAS');">Countries</a></div>
-			  <div><a href="#" style="opacity:0.5;"  id="link-products-AMERICAS" onclick="collapseProducts('AMERICAS'); selectProducts('AMERICAS');">Products</a></div>
+		<div class="link-countries" style="float: left;">
+			  <div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-countries-AMERICAS" onclick="collapseCountries('AMERICAS');selectCountries('AMERICAS');">Countries</a></div>
+			  <div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-products-AMERICAS" onclick="collapseProducts('AMERICAS'); selectProducts('AMERICAS');">Products</a></div>
 		</div>
-		<div id="countries-AMERICAS" class="countries" style="display:none;float:left; width: 70%;">
-			  <div style="float: left;width:20%;">
+		<div id="countries-AMERICAS" class="countries" style="display:none;float:left;">
+			  <div style="float: left;">
 				  <div><a href="#">Marocco</a></div>
 				  <div><a href="#">Nigeria</a></div>
 				  <div><a href="#">Dummy link text</a></div>
@@ -242,15 +257,15 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 			  </div>
 		</div>
 		
-		<div id="products-AMERICAS" class="products" style="float:left; width: 70%;" style="display:none">
-						<div style="float: left;width:20%;" class="link-products">
+		<div id="products-AMERICAS" class="products" style="float:left;" style="display:none">
+						<div style="float: left;" class="link-products">
 							  <div><a id="link-products-AMERICAS-abModels" href="#" onclick="collapseFoglia('#products-AMERICAS-abModels');selectLinkProducts(this.id);">AB Models</a></div>
 							  <div><a id="link-products-AMERICAS-Aw109" href="#" onclick="collapseFoglia('#products-AMERICAS-Aw109');selectLinkProducts(this.id);">Aw109/as119</a></div>
 						</div>
 
 						<div  id="products-AMERICAS-abModels" class="foglia" style="display:none;">
 							  <div class="detail-poi" style="padding: 12px;">
-								  <p><b><font color="red">Heliconia Industries SRL</font></b></p>
+								  <p><b><font color="#E4002B">Heliconia Industries SRL</font></b></p>
 								  <p><b>AW139 Maintenence, Parts and Quality support</b></p>
 								  <p>Aeroport International de Marrakech-Menara BP 13205- Marrakech- Marocco</p>
 								  <p>Phone +21 525 43 81 81</p>	
@@ -260,14 +275,14 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 
 						<div id="products-AMERICAS-Aw109" class="foglia" style="display:none;">
 							  <div class="detail-poi" style="padding: 12px;">
-								  <p><b><font color="red">Heliconia Industries SRL</font></b></p>
+								  <p><b><font color="#E4002B">Heliconia Industries SRL</font></b></p>
 								  <p><b>AW139 Maintenence, Parts and Quality support</b></p>
 								  <p>Aeroport International de Marrakech-Menara BP 13205- Marrakech- Marocco</p>
 								  <p>Phone +21 525 43 81 81</p>	
 								  <p>email: contact@heilconia-aerao.com</p>									  
 							  </div>
 							  <div class="detail-poi" style="padding: 12px;">
-								  <p><b><font color="red">Heliconia Industries SRL</font></b></p>
+								  <p><b><font color="#E4002B">Heliconia Industries SRL</font></b></p>
 								  <p><b>AW139 Maintenence, Parts and Quality support</b></p>
 								  <p>Aeroport International de Marrakech-Menara BP 13205- Marrakech- Marocco</p>
 								  <p>Phone +21 525 43 81 81</p>	
@@ -286,7 +301,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
     <div class="">
       <div class="panel-heading-region">
         <h4 class="panel-title-region">
-          <a href="#" onclick="collapse(ASIA)">ASIA</a>
+		  <a href="javascript:void(0)" class="linkRegion" id="asialink" onclick="collapse(ASIA);selectLinkRegion(this.id);">ASIA</a>
         </h4>
       </div>
       <div id="ASIA" class="panel-collapse-region" style="display:none">
@@ -299,7 +314,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 </div>
 
     <!--END FILTER PANEL-->
-	
+</div>	
 	
 	
 </div>

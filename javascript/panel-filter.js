@@ -33,6 +33,12 @@ function collapse(idToCollapse){
   $(".countries").hide("slow");
 }
 
+function selectLinkRegion(id){
+	var idCss = "#"+id;
+	$(idCss).css("color", "#E4002B");
+	$(".linkRegion").not(idCss).css("color", "black");
+}
+
 function collapseCountries(idToCollapse){
 
   $("#products-"+idToCollapse).hide();

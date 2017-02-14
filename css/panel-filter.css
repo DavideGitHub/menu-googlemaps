@@ -1,9 +1,14 @@
 body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.62857143;
     color: #333;
-    background-color: #fff;
+    background-color: #fff;*/
+}
+
+l.ink-products{
+	width:29%;
+	
 }
 
 #filter a {
@@ -29,8 +34,6 @@ body {
 
  .panel-collapse-region .panel-body-region {
   border-bottom: 1px solid #ddd;
-  padding: 15px;
-  padding-bottom: 15px;
 }
  
  .panel-scope{
@@ -43,12 +46,23 @@ body {
     border-left-color: #ddd;
     border-left-style: solid;
     border-left-width: 1px;
+	width:79%;
+ }
+  .link-countries{
+	 padding:15px;	 
+	 width:17%;
  }
  
  .products{
     border-left-color: #ddd;
     border-left-style: solid;
     border-left-width: 1px;
+	width:79%;
+ }
+ 
+ .link-products{
+	 padding:15px;
+	 width:22%;
  }
  
  .foglia{
@@ -76,9 +90,14 @@ a:hover, .dropdown:hover {
 }
 
 .container-filter {
-    padding-right: 15px;
     margin-right: auto;
     margin-left: auto;
+	background-color: #fff;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.62857143;
+    color: #333;
+	text-align: left;
 }
 
 @media (min-width: 1200px)
@@ -100,10 +119,6 @@ a:hover, .dropdown:hover {
     margin-bottom: 0.2em;
     margin-left: 0;
     margin-right: 0;
-}
-
-.panel-body-region {
-  padding: 15px;
 }
 
 
