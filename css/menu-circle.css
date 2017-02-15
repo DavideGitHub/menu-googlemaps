@@ -135,6 +135,62 @@ div.menu-item-rc:hover span {
     color:black;     
 }
 
+
+.menu-item-lc {
+  width:50%;
+  height:50%;
+  background-color:transparent;
+  border-radius:50%;
+  border-style: solid;
+  border-color: white;
+  border-width: medium;
+  display:none;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:15px;
+  top:25%;
+  left:25%;
+  z-index:19;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+div.menu-item-lc:hover {
+    background-color:white;    
+    cursor:pointer;  
+}
+
+div.menu-item-lc:hover span {
+    color:black;     
+}
+
+
+.menu-item-tc {
+  width:50%;
+  height:50%;
+  background-color:transparent;
+  border-radius:50%;
+  border-style: solid;
+  border-color: white;
+  border-width: medium;
+  display:none;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:15px;
+  top:25%;
+  left:25%;
+  z-index:19;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+div.menu-item-tc:hover {
+    background-color:white;    
+    cursor:pointer;  
+}
+
+div.menu-item-tc:hover span {
+    color:black;     
+}
+
 .menu-item-csp {
   width:50%;
   height:50%;
@@ -142,6 +198,7 @@ div.menu-item-rc:hover span {
   border-radius:50%;
   border-style: solid;
   border-color: white;
+  border-width: medium;
   display:none;
   position:absolute;
   color:white;
@@ -158,5 +215,32 @@ div.menu-item-csp:hover {
 }
 
 div.menu-item-csp:hover span {
+    color:black;     
+}
+
+.menu-item-training {
+  width:50%;
+  height:50%;
+  background-color:transparent;
+  border-radius:50%;
+  border-style: solid;
+  border-color: white;
+  border-width: medium;
+  display:none;
+  position:absolute;
+  color:white;
+  text-align:center;
+  line-height:15px;
+  top:25%;
+  left:25%;
+  z-index:19;
+  transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+div.menu-item-training:hover {
+    background-color:white;    
+    cursor:pointer;  
+}
+
+div.menu-item-training:hover span {
     color:black;     
 }

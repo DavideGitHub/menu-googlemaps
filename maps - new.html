@@ -7,9 +7,8 @@
 <title>Animated Radial Menu Demo</title>
 <link rel="stylesheet" type="text/css"  href="./css/menu-circle.css" >
 <script src="./jquery/jquery.min-1.9.1.js"></script>
-<!--script  src="./bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css" /-->
 <link rel="stylesheet" href="./css/panel-filter.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 <style>
 
 body{
@@ -70,6 +69,7 @@ div table tr th .num-capability{
 	color: red;
 }
 
+
 .navigation-bar{
 	width:959px;
 	background-color: #fff;
@@ -100,13 +100,27 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
    <div class="radial-menu-right" style="z-index:2;">
       <div class="menu-item-sc">
 		<div style="padding-top:20%;">
-			<span color="white" style="font-size: 80%;background-color:inherit;">Service Centres</span>
+			<span color="white" style="font-size: 70%;background-color:inherit;">Service Centres</span>
 		</div>
       </div>
       <div class="menu-item-rc">
 		<div style="padding-top:20%;">
-			<span color="white" style="font-size: 80%;background-color:inherit;">Repair Centres</span></div>
+			<span color="white" style="font-size: 70%;background-color:inherit;">Repair Centres</span>
+		</div>
 	  </div>
+	  
+	  <div class="menu-item-lc">
+		<div style="padding-top:20%;">
+			<span color="white" style="font-size: 70%;background-color:inherit;">Logistic Centres</span>
+		</div>
+	  </div>
+	  
+	  <div class="menu-item-tc">
+		<div style="padding-top:20%;">
+			<span color="white" style="font-size: 70%;background-color:inherit;">Training Centres</span>
+		</div>
+	  </div>
+	  
       <div class="mask-right"  >
          <span color="white" style="font-size: 150%">Facilities</span>
       </div>
@@ -114,16 +128,21 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
    <div class="radial-menu-left" style="z-index:2;">
       <div class="menu-item-csp">
 		<div style="padding-top:20%;">
-			<span color="white" style="font-size: 80%;background-color:inherit;">Customer Support</span>
+			<span color="white" style="font-size: 70%;background-color:inherit;">Customer Support</span>
 		</div>
       </div>
+	  
+      <div class="menu-item-training">
+		<div style="padding-top:20%;">
+			<span color="white" style="font-size: 70%;background-color:inherit;">Training</span>
+		</div>
+      </div>
+
       <div class="mask-left"  >
          <span color="white" style="font-size: 150%">People</span>
       </div>
    </div>
    
-   
-  
 	
 </div>
 
@@ -175,13 +194,16 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
    
 
     
-   <!--FILTER PANEL-->
+
   <div class="filter-container">
+  
+  
+     <!--FILTER PANEL-->
   <div id="filter" class="container-filter" style="display:none" >
   <div class="">
     <div class="">
       <div class="panel-heading-region">
-        <h4 class="panel-title-region">
+        <h4 class="panel-title-region" id="africaTitle">
           <a href="javascript:void(0)" class="linkRegion" id="africalink" onclick="collapse(AFRICA);selectLinkRegion(this.id);">AFRICA</a>
         </h4>
       </div>
@@ -251,7 +273,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
     </div>
     <div class="">
       <div class="panel-heading-region">
-        <h4 class="panel-title-region">
+        <h4 class="panel-title-region"  id="americaTitle">
 		   <a href="javascript:void(0)" class="linkRegion" id="americalink" onclick="collapse(AMERICAS);selectLinkRegion(this.id);">AMERICAS</a>
         </h4>
       </div>
@@ -313,7 +335,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
     </div>
     <div class="">
       <div class="panel-heading-region">
-        <h4 class="panel-title-region">
+        <h4 class="panel-title-region" id="asiaTitle">
 		  <a href="javascript:void(0)" class="linkRegion" id="asialink" onclick="collapse(ASIA);selectLinkRegion(this.id);">ASIA</a>
         </h4>
       </div>
@@ -327,6 +349,64 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 </div>
 
     <!--END FILTER PANEL-->
+	
+	
+	<!--START FILTER customer support PANEL-->
+	
+<div id="filter-customer-support" class="container-filter" style="display:none" >
+  <div class="">
+    <div class="">
+      <div class="panel-heading-region">
+        <h4 class="panel-title-region" id="africaTitle">
+          <a href="javascript:void(0)" class="linkRegion" id="africalink-cs" onclick="collapse(AFRICA);selectLinkRegion(this.id);">AFRICA</a>
+        </h4>
+      </div>
+      
+      <div id="AFRICA" class="panel-collapse-region" style="display:none;">
+        <div class="panel-body-region">
+		<div  class="link-countries" style="float: left;">
+			  <div><a href="javascript:void(0)" id="link-countries-AFRICA-cs" style="opacity:0.5;" onclick="collapseCountries('AFRICA-cs');  selectCountries('AFRICA-cs');">Countries</a></div>
+		</div>
+		<div id="countries-AFRICA-cs" class="countries" style="display:none;float:left; ">
+			  
+			  <div style="float: left;" class="link-countries">
+					  <div><a href="#" id="link-countries-AFRICA-Marocco" onclick="collapseFoglia('#countries-AFRICA-Marocco');selectLinkCountries(this.id);">Marocco</a></div>
+					  <div><a href="#" id="link-countries-AFRICA-Nigeria" onclick="collapseFoglia('#countries-AFRICA-Nigeria');selectLinkCountries(this.id);">Nigeria</a></div>
+			  </div>
+
+			  <div  id="countries-AFRICA-Marocco" class="foglia" style="display:none;">
+					  <div class="detail-poi" style="padding: 12px;">
+						  <p><b><font color="#E4002B">DANIELE MALTESE</font></b></p>
+						  <p>mobile +21 525 43 81 81</p>	
+						  <p>email: contact@heilconia-aerao.com</p>									  
+					  </div>
+			  </div>
+			  <div  id="countries-AFRICA-Nigeria" class="foglia" style="display:none;">
+					  <div class="detail-poi" style="padding: 12px;">
+						  <p><b><font color="#E4002B">GIOVANNNI MALTESE</font></b></p>
+						  <p>mobile +21 525 43 81 82</p>	
+						  <p>email: contact@heilconia-aerao.com</p>									  
+					  </div>
+					  <div class="detail-poi" style="padding: 12px;">
+						  <p><b><font color="#E4002B">PEPPINO MALTESE</font></b></p>
+						  <p>mobile +21 525 43 81 83</p>	
+						  <p>email: contact@heilconia-aerao.com</p>									  
+					  </div>
+			  </div>
+		</div>
+		
+		
+		
+		
+		</div>
+      </div>
+    </div>
+
+  </div> 
+</div>	
+	
+	<!--END FILTER customer support PANEL-->
+	
 </div>	
 	
 
@@ -362,6 +442,14 @@ $("#service-centres").click(function(){
 	
 });
 
+$("#customer-support-people").click(function(){
+
+	enableCustomerSupport();
+
+
+	
+});
+
 function enableServiceCentres() {
     $("#repair-centres").css({"pointer-events": "none", "opacity": "0.4"});
 	$("#logistic-centres").css({"pointer-events": "none", "opacity": "0.4"});
@@ -376,10 +464,24 @@ function enableServiceCentres() {
 	
 	//define to create
 	
-	
-	
 }
 
+//aggiunto....
+function enableCustomerSupport() {
+    $("#service-centres").css({"pointer-events": "none", "opacity": "0.4"});
+	$("#logistic-centres").css({"pointer-events": "none", "opacity": "0.4"});
+	$("#training-centres").css({"pointer-events": "none", "opacity": "0.4"});
+	$("#repair-centres").css({"pointer-events": "none", "opacity": "0.4"});
+	$("#training-people").css({"pointer-events": "none", "opacity": "0.4"});
+	
+	$(".overlay").hide();
+	$(".radial-menu-right").hide();
+	$(".radial-menu-left").hide();
+	$("#filter-customer-support").show("slow");
+	
+	//define to create
+	
+}
 
 </script>
 </body>

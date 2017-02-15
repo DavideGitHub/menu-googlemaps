@@ -6,12 +6,29 @@ body {
     background-color: #fff;*/
 }
 
+.linkRegion:after {
+    font-family: 'FontAwesome';
+    content: "\f078";
+    float: right;
+}
+
+.opened-tab .linkRegion:after {
+    font-family: 'FontAwesome';
+    content: "\f077";
+    float: right;
+}
+
 l.ink-products{
 	width:29%;
 	
 }
 
 #filter a {
+    color: black;
+	text-decoration: none;
+}
+/*nuovo da portare*/
+#filter-customer-support a {
     color: black;
 	text-decoration: none;
 }
@@ -29,7 +46,7 @@ l.ink-products{
     border-bottom-width: 1px; 
 	opacity: 0.5;
 	padding: 10px 15px;
-	width:15%;
+	width:17%;
  }
 
  .panel-collapse-region .panel-body-region {
@@ -108,10 +125,6 @@ a:hover, .dropdown:hover {
 @media (min-width: 992px)
 .container-filter {
      width: 970px; 
-}
-@media (min-width: 768px)
-.container-filter {
-    width: 750px;
 }
 
 .detail-poi p {

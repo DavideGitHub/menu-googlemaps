@@ -36,6 +36,8 @@ function collapse(idToCollapse){
 function selectLinkRegion(id){
 	var idCss = "#"+id;
 	$(idCss).css("color", "#E4002B");
+	$(idCss).parent().addClass("opened-tab");
+	$(".panel-title-region").not("#"+$(idCss).parent().attr('id')).removeClass("opened-tab");
 	$(".linkRegion").not(idCss).css("color", "black");
 }
 
