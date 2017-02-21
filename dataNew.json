@@ -63,6 +63,19 @@ data= {
 					"poiTitle": "KAWASAKI",
 					"poiPhone": "",
 					"poiAddress": "1-14-5, Kaigan, Minato-ku, Tokyo 105-8315, Japan"
+				},
+				 {
+					"product" : "AW139",
+					"capability": "AW139........",
+					"type": "Authorized Service Centre",
+					"country": "Japan",
+					"poiType": "RAPRESITTATIVE",
+					"poiEmail": "",
+					"poiLatitude": "35.65346",
+					"poiLongitude": "139.761657",
+					"poiTitle": "KAWASAKI",
+					"poiPhone": "",
+					"poiAddress": "1-14-5, Kaigan, Minato-ku, Tokyo 105-8315, Japan"
 				}],	
 		"africa" : {},
 		"middleEast":{},

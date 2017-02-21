@@ -65,11 +65,20 @@ l.ink-products{
     border-left-width: 1px;
 	width:79%;
  }
+ 
+ /*MODIFICATE*/
   .link-countries{
+	  
+	 padding:15px;	 
+	 width:22%;
+ }
+   
+  .link-product-countries{
 	  
 	 padding:15px;	 
 	 width:17%;
  }
+ 
  
  .products{
     border-left-color: #ddd;

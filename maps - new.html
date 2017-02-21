@@ -57,6 +57,9 @@ div table tr th{
 	padding: 10px;
 	cursor:pointer;
 }
+#service-centres:hover {
+    opacity: 1;
+}
 
 div table tr th span{
 	font-size: 90%;
@@ -98,7 +101,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
    <div id="map-canvas-1" class="mappa" style="position: relative;overflow: hidden;"></div>
    <div class="overlay mappa"></div>
    <div class="radial-menu-right" style="z-index:2;">
-      <div class="menu-item-sc">
+      <div class="menu-item-sc" onclick="document.getElementById('service-centres').click()">
 		<div style="padding-top:20%;">
 			<span color="white" style="font-size: 70%;background-color:inherit;">Service Centres</span>
 		</div>
@@ -126,7 +129,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
       </div>
    </div>
    <div class="radial-menu-left" style="z-index:2;">
-      <div class="menu-item-csp">
+      <div class="menu-item-csp" onclick="document.getElementById('customer-support-people').click()";>
 		<div style="padding-top:20%;">
 			<span color="white" style="font-size: 70%;background-color:inherit;">Customer Support</span>
 		</div>
@@ -279,7 +282,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
       </div>
       <div id="AMERICAS" class="panel-collapse-region" style="display:none">
         <div class="panel-body-region">
-		<div class="link-countries" style="float: left;">
+		<div class="link-product-countries" style="float: left;">
 			  <div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-countries-AMERICAS" onclick="collapseCountries('AMERICAS');selectCountries('AMERICAS');">Countries</a></div>
 			  <div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-products-AMERICAS" onclick="collapseProducts('AMERICAS'); selectProducts('AMERICAS');">Products</a></div>
 		</div>
@@ -358,30 +361,34 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
     <div class="">
       <div class="panel-heading-region">
         <h4 class="panel-title-region" id="africaTitle">
-          <a href="javascript:void(0)" class="linkRegion" id="africalink-cs" onclick="collapse(AFRICA);selectLinkRegion(this.id);">AFRICA</a>
+          <a href="javascript:void(0)" class="linkRegion" id="africalink-cs" onclick="collapse('#AFRICA-cs');selectLinkRegion(this.id);">AFRICA</a>
         </h4>
       </div>
       
-      <div id="AFRICA" class="panel-collapse-region" style="display:none;">
+      <div id="AFRICA-cs" class="panel-collapse-region" style="display:none;">
         <div class="panel-body-region">
-		<div  class="link-countries" style="float: left;">
-			  <div><a href="javascript:void(0)" id="link-countries-AFRICA-cs" style="opacity:0.5;" onclick="collapseCountries('AFRICA-cs');  selectCountries('AFRICA-cs');">Countries</a></div>
+		<div class="link-product-countries" style="float: left;">
+			  <div><a href="javascript:void(0)" id="link-countries-AFRICA-cs" style="opacity:0.5;" onclick="collapseCountries('AFRICA-cs');  selectCountries('AFRICA');">Countries</a></div>
 		</div>
 		<div id="countries-AFRICA-cs" class="countries" style="display:none;float:left; ">
 			  
 			  <div style="float: left;" class="link-countries">
-					  <div><a href="#" id="link-countries-AFRICA-Marocco" onclick="collapseFoglia('#countries-AFRICA-Marocco');selectLinkCountries(this.id);">Marocco</a></div>
-					  <div><a href="#" id="link-countries-AFRICA-Nigeria" onclick="collapseFoglia('#countries-AFRICA-Nigeria');selectLinkCountries(this.id);">Nigeria</a></div>
+					  <div><a href="#" id="link-countries-AFRICA-Marocco" onclick="collapseFoglia('#countries-AFRICA-Marocco-cs');selectLinkCountries(this.id);">Marocco</a></div>
+					  <div><a href="#" id="link-countries-AFRICA-Nigeria" onclick="collapseFoglia('#countries-AFRICA-Nigeria-cs');selectLinkCountries(this.id);">Nigeria</a></div>
 			  </div>
 
-			  <div  id="countries-AFRICA-Marocco" class="foglia" style="display:none;">
+
+			  
+			  
+			  
+			  <div  id="countries-AFRICA-Marocco-cs" class="foglia" style="display:none;">
 					  <div class="detail-poi" style="padding: 12px;">
 						  <p><b><font color="#E4002B">DANIELE MALTESE</font></b></p>
 						  <p>mobile +21 525 43 81 81</p>	
 						  <p>email: contact@heilconia-aerao.com</p>									  
 					  </div>
 			  </div>
-			  <div  id="countries-AFRICA-Nigeria" class="foglia" style="display:none;">
+			  <div  id="countries-AFRICA-Nigeria-cs" class="foglia" style="display:none;">
 					  <div class="detail-poi" style="padding: 12px;">
 						  <p><b><font color="#E4002B">GIOVANNNI MALTESE</font></b></p>
 						  <p>mobile +21 525 43 81 82</p>	
@@ -394,15 +401,66 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 					  </div>
 			  </div>
 		</div>
+  
+    </div>
+
+	
+
 		
-		
+  </div> 
+  
+  
+  	<!-- AMERICA-->
+	  <div class="">
+	   <div class="panel-heading-region">
+          <h4 class="panel-title-region" id="americaTitle">
+          <a href="javascript:void(0)" class="linkRegion" id="americalink-cs" onclick="collapse(AMERICA);selectLinkRegion(this.id);">AMERICA</a>
+        </h4>
+      </div>
+	    <div id="AMERICA" class="panel-collapse-region" style="display:none;">
+        <div class="panel-body-region">
+		<div class="link-product-countries" style="float: left;">
+			  <div><a href="javascript:void(0)" id="link-countries-AMERICA-cs" style="opacity:0.5;" onclick="collapseCountries('AMERICA-cs');  selectCountries('AMERICA');">Countries</a></div>
+		</div>
+		<div id="countries-AMERICA-cs" class="countries" style="display:none;float:left; ">
+			  
+			  <div style="float: left;" class="link-countries">
+					  <div><a href="#" id="link-countries-AMERICA-Marocco" onclick="collapseFoglia('#countries-AMERICA-Marocco-cs');selectLinkCountries(this.id);">Marocco</a></div>
+					  <div><a href="#" id="link-countries-AMERICA-Nigeria" onclick="collapseFoglia('#countries-AMERICA-Nigeria-cs');selectLinkCountries(this.id);">Nigeria</a></div>
+			  </div>
+
+
+			  
+			  
+			  
+			  <div  id="countries-AMERICA-Marocco-cs" class="foglia" style="display:none;">
+					  <div class="detail-poi" style="padding: 12px;">
+						  <p><b><font color="#E4002B">DANIELE MALTESE</font></b></p>
+						  <p>mobile +21 525 43 81 81</p>	
+						  <p>email: contact@heilconia-aerao.com</p>									  
+					  </div>
+			  </div>
+			  <div  id="countries-AMERICA-Nigeria-cs" class="foglia" style="display:none;">
+					  <div class="detail-poi" style="padding: 12px;">
+						  <p><b><font color="#E4002B">GIOVANNNI MALTESE</font></b></p>
+						  <p>mobile +21 525 43 81 82</p>	
+						  <p>email: contact@heilconia-aerao.com</p>									  
+					  </div>
+					  <div class="detail-poi" style="padding: 12px;">
+						  <p><b><font color="#E4002B">PEPPINO MALTESE</font></b></p>
+						  <p>mobile +21 525 43 81 83</p>	
+						  <p>email: contact@heilconia-aerao.com</p>									  
+					  </div>
+			  </div>
+		</div>	
 		
 		
 		</div>
       </div>
-    </div>
-
-  </div> 
+	  </div>
+	<!-- END AMERICA -->
+  
+  
 </div>	
 	
 	<!--END FILTER customer support PANEL-->
@@ -433,55 +491,58 @@ $(document).ready(function(){
 
 
 
-$("#service-centres").click(function(){
+			$("#service-centres").click(function(){
 
-	enableServiceCentres();
+				enableServiceCentres();
+				
+				
+			});
 
-	
-	
-	
-});
+			$("#customer-support-people").click(function(){
 
-$("#customer-support-people").click(function(){
-
-	enableCustomerSupport();
+				enableCustomerSupport();
 
 
-	
-});
+				
+			});
 
-function enableServiceCentres() {
-    $("#repair-centres").css({"pointer-events": "none", "opacity": "0.4"});
-	$("#logistic-centres").css({"pointer-events": "none", "opacity": "0.4"});
-	$("#training-centres").css({"pointer-events": "none", "opacity": "0.4"});
-	$("#customer-support-people").css({"pointer-events": "none", "opacity": "0.4"});
-	$("#training-people").css({"pointer-events": "none", "opacity": "0.4"});
-	
-	$(".overlay").hide();
-	$(".radial-menu-right").hide();
-	$(".radial-menu-left").hide();
-	$("#filter").show("slow");
-	
-	//define to create
-	
-}
+			function enableServiceCentres() {
+				$("#service-centres").css({"opacity": "1"})
+				$("#repair-centres").css({"opacity": "0.4"});
+				$("#logistic-centres").css({"opacity": "0.4"});
+				$("#training-centres").css({"opacity": "0.4"});
+				$("#customer-support-people").css({"opacity": "0.4"});
+				$("#training-people").css({"opacity": "0.4"});
+				
+				$(".overlay").hide();
+				$(".radial-menu-right").hide();
+				$(".radial-menu-left").hide();
+				$("#filter-customer-support").hide();
+				$("#filter").show("slow");
+				
+				//define to create
+				
+			}
 
-//aggiunto....
-function enableCustomerSupport() {
-    $("#service-centres").css({"pointer-events": "none", "opacity": "0.4"});
-	$("#logistic-centres").css({"pointer-events": "none", "opacity": "0.4"});
-	$("#training-centres").css({"pointer-events": "none", "opacity": "0.4"});
-	$("#repair-centres").css({"pointer-events": "none", "opacity": "0.4"});
-	$("#training-people").css({"pointer-events": "none", "opacity": "0.4"});
-	
-	$(".overlay").hide();
-	$(".radial-menu-right").hide();
-	$(".radial-menu-left").hide();
-	$("#filter-customer-support").show("slow");
-	
-	//define to create
-	
-}
+			//aggiunto....
+			function enableCustomerSupport() {
+				$("#customer-support-people").css({"opacity": "1"})
+				$("#repair-centres").css({"opacity": "0.4"});
+				$("#logistic-centres").css({"opacity": "0.4"});
+				$("#training-centres").css({"opacity": "0.4"});
+				$("#service-centres").css({"opacity": "0.4"});
+				$("#training-people").css({"opacity": "0.4"});
+				
+				
+				$(".overlay").hide();
+				$(".radial-menu-right").hide();
+				$(".radial-menu-left").hide();
+				$("#filter").hide();
+				$("#filter-customer-support").show("slow");
+				
+				//define to create
+				
+			}
 
 </script>
 </body>

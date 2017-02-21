@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="./dataNew.json"></script>
+<script type="text/javascript" src="./data2.json"></script>
+<script src="./javascript/lodash.js"></script>
+<script src="./jquery/jquery.min-1.9.1.js"></script>
+
+<meta charset="utf-8">
+<title>append demo</title>
+
+</head>
+<body>
+ 
+<p>I would like to say: </p>
+ <div>
+ <div style="border-style: solid" class="link-products" >
+	<div><a href="#" id="link-products-AFRICA-abModels" onclick="appendDetailsCountry('sc',this)">AB Models</a></div>
+	<div><a href="#" id="link-products-AFRICA-Aw109" onclick="appendDetailsCountry('sc', this)">Aw109/as119</a></div>
+</div>
+
+<div style="border-style: solid" class="link-countries">
+	  <div><a href="#" id="link-countries-AFRICA-Marocco" onclick="appendDetailsPeople('csp',this)">Marocco</a></div>
+	  <div><a href="#" id="link-countries-AFRICA-Nigeria" onclick="appendDetailsPeople('csp',this)">Nigeria</a></div>
+</div>
+</div>
+ 
+
+
+<script>
+
+												
+var sc_AFRICA_abModels = [{
+			"product" : ["AW139", "abModels"],
+			"capability": ["AW139", "Maintenance, Parts and Quality support"],
+			"type": "Excellent Service Centre",
+			"country": "USA",
+			"poiType": "ACADEMY",
+			"poiEmail": "contact@heilconia-aerao.com",
+			"poiLatitude": "40.083199",
+			"poiLongitude": "-75.002911",
+			"poiTitle": "AgustaWestland Philadelphia Training Academy",
+			"poiPhone": "+1 (215) 281-1400",
+			"poiAddress": "3050 Red Lion Road, PA 19114, Philadelpia, USA"
+		},{
+			"product" : ["AW139", "AW109"],
+			"capability": ["AW139", "Maintenance, Parts and Quality support"],
+			"type": "Excellent Service Centre",
+			"country": "USA",
+			"poiType": "ACADEMY",
+			"poiEmail": "contact@heilconia-aerao.com",
+			"poiLatitude": "40.083199",
+			"poiLongitude": "-75.002911",
+			"poiTitle": "AgustaWestland Philadelphia Training Academy",
+			"poiPhone": "+1 (215) 281-1400",
+			"poiAddress": "3050 Red Lion Road, PA 19114, Philadelpia, USA"
+		}];
+												
+var sc_AFRICA_Aw109 = [{
+			"product" : ["AW139", "AW109"],
+			"capability": ["AW139", "Maintenance, Parts and Quality support"],
+			"type": "Excellent Service Centre",
+			"country": "USA",
+			"poiType": "ACADEMY",
+			"poiEmail": "contact@heilconia-aerao.com",
+			"poiLatitude": "40.083199",
+			"poiLongitude": "-75.002911",
+			"poiTitle": "AgustaWestland Philadelphia Training Academy",
+			"poiPhone": "+1 (215) 281-1400",
+			"poiAddress": "3050 Red Lion Road, PA 19114, Philadelpia, USA"
+		}];
+		
+var sc_AFRICA_Nigeria = [];		
+
+//struttura people
+var csp_AFRICA_Marocco = [{
+						"type": "Material Order Administrator",
+						"country": "USA",
+						"poiType": "ACADEMY",
+						"poiEmail": "Gennaro@gmail.com",
+						"poiLatitude": "40.083199",
+						"poiLongitude": "-75.002911",
+						"poiTitle": "Gennaro",
+						"poiPhone": "+1 (215) 281-1400",
+						"poiAddress": "3050 Red Lion Road, PA 19114, Philadelpia, USA"
+					}, {
+						"type": "Training Account Manager",
+						"country": "Brazil",
+						"poiType": "RAPRESITTATIVE",
+						"poiEmail": "Mohamed@gmail.com",
+						"poiLatitude": "35.65346",
+						"poiLongitude": "139.761657",
+						"poiTitle": "Mohamed",
+						"poiPhone": "+1 (215) 281-1400",
+						"poiAddress": "1-14-5, Kaigan, Minato-ku, Tokyo 105-8315, Japan"
+					}];	
+
+
+			
+</script>
+ <script src="./javascript/panel-filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="./dataNew.json"></script>
+<script type="text/javascript" src="./data2.json"></script>
+<script src="./javascript/lodash.js"></script>
+<script src="./jquery/jquery.min-1.9.1.js"></script>
+
+<meta charset="utf-8">
+<title>append demo</title>
+
+</head>
+<body>
+ 
+<p>I would like to say: </p>
+ <div>
+ <div style="border-style: solid" class="link-products" >
+	<div><a href="#" id="link-products-AFRICA-abModels" onclick="appendDetailsCountry('sc',this)">AB Models</a></div>
+	<div><a href="#" id="link-products-AFRICA-Aw109" onclick="appendDetailsCountry('sc', this)">Aw109/as119</a></div>
+</div>
+
+<div style="border-style: solid" class="link-countries">
+	  <div><a href="#" id="link-countries-AFRICA-Marocco" onclick="appendDetailsPeople('csp',this)">Marocco</a></div>
+	  <div><a href="#" id="link-countries-AFRICA-Nigeria" onclick="appendDetailsPeople('csp',this)">Nigeria</a></div>
+</div>
+</div>
+ 
+
+
+<script>s
+
+												
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="./dataNew.json"></script>
+<script type="text/javascript" src="./data2.json"></script>
+<script src="./javascript/lodash.js"></script>
+<script src="./jquery/jquery.min-1.9.1.js"></script>
+
+<meta charset="utf-8">
+<title>append demo</title>
+
+</head>
+<body>
+ 
+<p>I would like to say: </p>
+
+
+<div class="panel-heading-region">
+	<h4 class="panel-title-region" id="americaTitle">
+		<a href="javascript:void(0)" class="linkRegion" id="americalink"
+		   data-region="america"
+		   onclick="collapse(AMERICAS);selectLinkRegion(this.id);">AMERICAS</a>
+	</h4>
+</div>
+<div id="AMERICAS" class="panel-collapse-region" style="display:none">
+	<div class="panel-body-region">
+		<div class="link-product-countries" style="float: left;">
+			<div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-countries-AMERICAS" onclick="collapseCountries('AMERICAS');selectCountries('AMERICAS');">Countries</a></div>
+			<div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-products-AMERICAS" onclick="collapseProducts('AMERICAS'); selectProducts('AMERICAS');">Products</a></div>
+		</div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function(){
+
+
+	$(".linkRegion").click(function() {
+	
+        appendCountries("ciao", [{key: "ciao", value: "boo"}], this, kind);
+		
+	}
+
+})
+
+function appendCountries(region, countries, element, type){
+
+	if( countries == 'undefined' ||  countries.length == 0){
+		 return;
+	}	
+
+    var id="countries-" + region + "-" + type; 
+	var htmlCountries ="<div id='" + id + "' class='countries' style='display:none;float:left;'> " +
+							"<div style='float: left;' class='link-countries'>";
+	
+	if( typeof countries !== 'undefined' && countries.length > 0){
+		var i;
+		for(i = 1; i < countries.length; i++){
+			
+			htmlCountries+= appendCountry(region, countries[i]);
+			
+		}
+		
+	}
+	htmlCountries+="</div></div>";
+	var classParent = element.parentElement.parentElement.parentElement.getAttribute('class');
+	$("."+ classParent).append(htmlCountries);	
+	
+}
+
+
+
+function appendCountry(region, country){
+		
+	//link-countries-AMERICA-Marocco
+	var id = "link-countries-"+	region + "-" + country;
+	return "<div><a href='#' id=" + id + " data-country='" + country.key + "'  +
+			"onclick='selectLinkCountries(this.id);'>"+ country.value +"</a></div>";
+}
+			
+</script>
+ <script src="./javascript/panel-filter.js"></script>
+</body>
+</html>
+
+
+			
+</script>
+ <script src="./javascript/panel-filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="./dataNew.json"></script>
+<script type="text/javascript" src="./data2.json"></script>
+<script src="./javascript/lodash.js"></script>
+<script src="./jquery/jquery.min-1.9.1.js"></script>
+
+<meta charset="utf-8">
+
+<title>append demo</title>
+
+</head>
+<body>
+ 
+<p>I would like to say: </p>
+
+<div class="tab-americs">
+	<div class="panel-heading-region">
+		<h4 class="panel-title-region" id="americaTitle">
+			<a href="javascript:void(0)" class="linkRegion" id="americalink"
+			   data-region="america"
+			   onclick="">AMERICAS</a>
+		</h4>
+	</div>
+	
+	
+	
+	<div id="AMERICAS" class="panel-collapse-region" style="display:none">
+		<div class="panel-body-region">
+			<div class="link-product-countries" style="float: left;">
+				<div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-countries-AMERICAS" onclick="collapseCountries('AMERICAS');selectCountries('AMERICAS');">Countries</a></div>
+				<div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-products-AMERICAS" onclick="collapseProducts('AMERICAS'); selectProducts('AMERICAS');">Products</a></div>
+			</div>
+			
+			<div id="countries-AMERICAS" class="countries" style="display:none;float:left;">
+				<div style="float: left;" class="link-countries">
+					<div><a href="#" data-country="usa">USA</a></div>
+					<div><a href="#" data-country="canada">Canada</a></div>
+				</div>
+			</div>
+
+			<div id="products-AMERICAS" class="products" style="float:left;" style="display:none">
+				<div style="float: left;" class="link-products">
+					<div><a id="link-products-AMERICAS-abModels" href="#"
+							data-product="aw139"
+							onclick="selectLinkProducts(this.id);">
+						AB Models</a>
+					</div>
+					<div><a id="link-products-AMERICAS-Aw109" href="#"
+							data-product="aw109"
+							onclick="selectLinkProducts(this.id);">Aw109/as119</a>
+					</div>
+				</div>
+			</div>			
+			
+			
+		</div>
+	</div>
+	
+	
+</div>
+
+<script>
+$(document).ready(function(){
+
+
+$(".linkRegion").click(function() {
+
+	//appendLinkCountryInsideRegion("AMERICA", [{key: "usa", value: "USA"}], this, "service-centres");
+	
+	appendLinkCountryProductInsideRegion("AMERICA", [{key: "usa", value: "USA"}], [{key: "aw139", value: "aw139"}],this, "service-centres");
+
+	});
+});
+
+function appendLinkCountryProductInsideRegion(region, countries, products, element, type){
+	
+	var id = region + "-" + type;
+	var idLinkCountries = "link-countries-" + id;
+	var idLinkProducts = "link-products-" + id;	
+	
+	var html = "<div id='"+ id +"' class='panel-collapse-region'>";
+	html+= "<div class='panel-body-region'>";
+	html+= "<div class='link-product-countries' style='float: left;'>";
+	html+= "<div><a href='javascript:void(0)' style='opacity:0.5;'  id='" + idLinkCountries + "' onclick='selectCountries(" + id + ");'>Countries</a></div>";
+	html+= "<div><a href='javascript:void(0)' style='opacity:0.5;'  id='" + idLinkProducts + "' onclick='selectCountries(" + id + ");'>Products</a></div>";
+		
+	html+=	"</div>";
+	html+= appendCountries(region, countries, element, type);
+	html+= appendProducts(region, products, element, type);	
+	html+=	"</div>";
+	html+="</div>";
+	var classParent = element.parentElement.parentElement.parentElement.getAttribute('class');
+	$("."+ classParent).append(html);	
+
+
+}
+
+function appendLinkCountryInsideRegion(region, countries, element, type){
+	var id = region + "-" + type;
+	var idLinkCountries = "link-countries-" + id;
+	
+	
+	var html = "<div id='"+ id +"' class='panel-collapse-region'>";
+	html+= "<div class='panel-body-region'>";
+	html+= "<div class='link-product-countries' style='float: left;'>";
+	html+= "<div><a href='javascript:void(0)' style='opacity:0.5;'  id='" + idLinkCountries + "' onclick='selectCountries(" + id + ");'>Countries</a></div>";
+	html+=	"</div>";
+	html+= appendCountries(region, countries, element, type);
+	html+=	"</div>";
+	html+="</div>";
+	var classParent = element.parentElement.parentElement.parentElement.getAttribute('class');
+	$("."+ classParent).append(html);	
+}
+
+function appendCountries(region, countries, element, type){
+
+
+	if( countries == 'undefined' ||  countries.length == 0){
+		 return;
+	}	
+
+    var id="countries-" + region + "-" + type; 
+	var htmlCountries ="<div id='" + id + "' class='countries' style='display:none;float:left;'> <div style='float: left;' class='link-countries'>";
+	
+	if( typeof countries !== 'undefined' && countries.length > 0){
+		var i;
+		for(i = 0; i < countries.length; i++){
+			
+			htmlCountries+= appendCountry(region, countries[i]);
+			
+		}
+		
+	}
+	htmlCountries+="</div></div>";
+	return htmlCountries;
+	
+}
+
+function appendProducts(region, products, element, type){
+
+
+	if( products == 'undefined' ||  products.length == 0){
+		 return;
+	}	
+
+    var id="products-" + region + "-" + type; 
+	var html ="<div id='" + id + "' class='products' style='display:none;float:left;'> <div style='float: left;' class='link-products'>";
+	
+	if( typeof products !== 'undefined' && products.length > 0){
+		var i;
+		for(i = 0; i < products.length; i++){
+			
+			html+= appendProduct(region, products[i]);
+			
+		}
+		
+	}
+	html+="</div></div>";
+	return html;
+	
+}
+
+function appendCountry(region, country){
+		
+	//link-countries-AMERICA-Marocco
+	var id = "link-countries-"+	region + "-" + country.key;
+	var html = "<div><a href='#' data-country='" + country.key + "'>"+ country.value +"</a></div>";		
+	return html;		
+}
+
+
+
+function appendProduct(region, product){
+		
+	//link-products-AMERICA-aw33
+	var id = "link-products-"+	region + "-" + product.key;
+	var html = "<div><a href='#' data-product='" + product.key + "'>"+ product.value +"</a></div>";		
+	return html;		
+}
+			
+</script>
+ <script src="./javascript/panel-filter.js"></script>
+</body>
+</html>
