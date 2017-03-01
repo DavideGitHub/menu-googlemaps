@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="./css/panel-filter.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  
+<style>
+
+
+.dropbtn {
+	cursor:pointer;
+	padding:5px;
+    color: black;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+	opacity: 0.4;
+}
+
+
+
+.dropdown {
+
+    font-weight: bold;
+    border-width: 1px;
+    border-style: solid;
+	border-color: black;
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #fff}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    opacity: 1;
+	  
+}
+.dropdown:hover .dropbtn:after {
+    font-family: 'FontAwesome';
+    content: "\f077";
+    float: right;
+}
+
+#div_entry_mobile_selected:after{
+    font-family: 'FontAwesome';
+    content: "\f077";
+    float: right;
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+		<div class="maps_dropdown_monbile" >
+			 <div class="dropdown" style="width: 150px">
+			  <div class="dropbtn linkRegion" id="entry_centres_mobile" onclick="selectLinkMenuMobile(this.id);">FACILITIES</div>
+			  <div class="dropdown-content">
+				<a href="#" id="link_mobile_sc">Service Centres</a>
+				<a href="#" id="link_mobile-rc">Repair Centres</a>
+				<a href="#" id="link-mobile-lc">Logistic Centres</a>
+				<a href="#" id="link-mobile-tc">Training Centres</a>
+			  </div>
+			</div>
+			 <div class="dropdown" style="width: 150px">
+			  <div class="dropbtn linkRegion" id="entry_people_mobile" onclick="selectLinkMenuMobile(this.id);">PEOPLE</div>
+			  <div class="dropdown-content">
+				<a href="#" id="link-mobile-cs">Customer Support</a>
+				<a href="#" id="link-mobile-tc">Training</a>
+			  </div>
+			</div>
+		
+		<div id="div_entry_mobile_selected" style="display:none">
+			<span id="entry-mobile-selected">Service Centres</span>
+			
+		</div>
+		</div>
+		
+		
+		
+		
+<script>
+
+$(document).ready(function() {
+
+	$(".dropdown-content a").click(function() {
+	
+			console.log($(this).text());
+			$('#entry-mobile-selected').text($(this).text());
+			$('#div_entry_mobile_selected').show();
+			$('.dropdown').hide();
+		});
+
+	$("#div_entry_mobile_selected:after").click(function() {
+			
+			$('#div_entry_mobile_selected').hide();	
+			$('.dropdown').show();
+
+		});
+		
+});
+
+</script>
+</body>
+</html>

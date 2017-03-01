@@ -56,6 +56,7 @@ body{
 div table tr th{
 	padding: 10px;
 	cursor:pointer;
+
 }
 #service-centres:hover {
     opacity: 1;
@@ -70,6 +71,7 @@ div table tr th .num-capability{
 	font-size: 200%;
 	display: block;
 	color: red;
+	/*opacity: 0.4;*/
 }
 
 
@@ -79,6 +81,13 @@ div table tr th .num-capability{
 	font-size: medium;
 }
 
+div table tr th.enable{
+	opacity:1 !important;
+}
+
+div table tr th.disable{
+	opacity:0.4;
+}
 
 </style>
 
@@ -101,6 +110,9 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
    <div id="map-canvas-1" class="mappa" style="position: relative;overflow: hidden;"></div>
    <div class="overlay mappa"></div>
    <div class="radial-menu-right" style="z-index:2;">
+	
+	
+   
       <div class="menu-item-sc" onclick="document.getElementById('service-centres').click()">
 		<div style="padding-top:20%;">
 			<span color="white" style="font-size: 70%;background-color:inherit;">Service Centres</span>
@@ -153,7 +165,7 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
  <div class="navigation-bar">
       <table style="width:inherit">
          <tr>
-            <th id="service-centres">
+            <th id="service-centres" >
                <div>
                   <span class="num-capability" id="service-centres-num"></span> 
                   <span>Service Centres</span>
@@ -165,25 +177,25 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
                   <span>Repair Centres</span>
                </div>
             </th>
-            <th id="logistic-centres">
+            <th id="logistic-centres" >
                <div>
                   <span class="num-capability" id="logistic-centres-num"></span> 
                   <span>Logistic Centres</span>
                </div>
             </th>
-            <th id="training-centres" style="border-right: #ddd solid 1px;">
+            <th id="training-centres"  style="border-right: #ddd solid 1px;">
                <div>
                   <span class="num-capability" id="training-centres-num"></span> 
                   <span>Training Centres</span>
                </div>
             </th>
-            <th id="customer-support-people">
+            <th id="customer-support-people" >
                <div>
                   <span class="num-capability" id="customer-support-people-num"></span> 
                   <span>Customer Support People</span>
                </div>
             </th>
-            <th id="training-people">
+            <th id="training-people" >
                <div>
                   <span class="num-capability" id="training-people-num"></span> 
                   <span>Training People</span>
@@ -199,10 +211,19 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
     
 
   <div class="filter-container">
-  
+
   
      <!--FILTER PANEL-->
   <div id="filter" class="container-filter" style="display:none" >
+
+  
+    <div class="">
+    <div class="">
+      <div class="" style="text-align:right;padding: 10px 15px;">
+          <a href="javascript:void(0)" style="" class="" id="africalink" onclick="">AFRICA</a>
+      </div>
+  </div>
+  </div>
   <div class="">
     <div class="">
       <div class="panel-heading-region">
@@ -478,6 +499,11 @@ google.maps.event.addDomListener(window, "load", initializeMaps);
 <script src="./javascript/menu.circle.js"></script>
 <script src="./javascript/panel-filter.js"></script>
 <script>
+
+function selectEntryNavigationBar(idEntry){
+    console.log('ciao '+idEntry);
+}
+
 $(document).ready(function(){
 
 	$("#service-centres-num").text("1");
@@ -489,10 +515,16 @@ $(document).ready(function(){
 	
 });
 
+	$( "div table tr th" ).hover(function() {
+		$( this ).toggleClass( "enable");
+   });
 
+    $(".navigation-bar > table > tbody > tr > th").click(function() {
+    	selectEntryNavigationBar($(this).attr("id"));
+    });
 
 			$("#service-centres").click(function(){
-
+				
 				enableServiceCentres();
 				
 				
@@ -507,12 +539,26 @@ $(document).ready(function(){
 			});
 
 			function enableServiceCentres() {
-				$("#service-centres").css({"opacity": "1"})
-				$("#repair-centres").css({"opacity": "0.4"});
-				$("#logistic-centres").css({"opacity": "0.4"});
-				$("#training-centres").css({"opacity": "0.4"});
-				$("#customer-support-people").css({"opacity": "0.4"});
-				$("#training-people").css({"opacity": "0.4"});
+				selectEntryNavigationBar("service-centres");
+				
+				$("#service-centres").removeClass("disable");
+				$("#service-centres").addClass("enable");
+
+				
+				$("#repair-centres").removeClass("enable");
+				$("#repair-centres").addClass("disable");
+				
+				$("#logistic-centres").removeClass("enable");
+				$("#logistic-centres").addClass("disable");
+				
+				$("#training-centres").removeClass("enable");
+				$("#training-centres").addClass("disable");
+				
+				$("#customer-support-people").removeClass("enable");
+				$("#customer-support-people").addClass("disable");
+				
+				$("#training-people").removeClass("enable");
+				$("#training-people").addClass("disable");/**/
 				
 				$(".overlay").hide();
 				$(".radial-menu-right").hide();
@@ -526,12 +572,24 @@ $(document).ready(function(){
 
 			//aggiunto....
 			function enableCustomerSupport() {
-				$("#customer-support-people").css({"opacity": "1"})
-				$("#repair-centres").css({"opacity": "0.4"});
-				$("#logistic-centres").css({"opacity": "0.4"});
-				$("#training-centres").css({"opacity": "0.4"});
-				$("#service-centres").css({"opacity": "0.4"});
-				$("#training-people").css({"opacity": "0.4"});
+				$("#service-centres").removeClass("enable");
+				$("#service-centres").addClass("disable");
+				
+				$("#repair-centres").removeClass("enable");
+				$("#repair-centres").addClass("disable");
+				
+				$("#logistic-centres").removeClass("enable");
+				$("#logistic-centres").addClass("disable");
+				
+				$("#training-centres").removeClass("enable");
+				$("#training-centres").addClass("disable");
+				
+				$("#customer-support-people").removeClass("disable");
+				$("#customer-support-people").addClass("enable");
+
+				
+				$("#training-people").removeClass("enable");
+				$("#training-people").addClass("disable");
 				
 				
 				$(".overlay").hide();
@@ -542,7 +600,7 @@ $(document).ready(function(){
 				
 				//define to create
 				
-			}
+			}/**/
 
 </script>
 </body>

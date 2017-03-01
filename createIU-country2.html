@@ -15,51 +15,33 @@
  
 <p>I would like to say: </p>
 
-<div class="tab-americs">
-	<div class="panel-heading-region">
-		<h4 class="panel-title-region" id="americaTitle">
-			<a href="javascript:void(0)" class="linkRegion" id="americalink"
-			   data-region="america"
-			   onclick="">AMERICAS</a>
-		</h4>
-	</div>
-	
-	
-	
-	<div id="AMERICAS" class="panel-collapse-region" style="display:none">
-		<div class="panel-body-region">
-			<div class="link-product-countries" style="float: left;">
-				<div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-countries-AMERICAS" onclick="collapseCountries('AMERICAS');selectCountries('AMERICAS');">Countries</a></div>
-				<div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-products-AMERICAS" onclick="collapseProducts('AMERICAS'); selectProducts('AMERICAS');">Products</a></div>
-			</div>
-			
-			<div id="countries-AMERICAS" class="countries" style="display:none;float:left;">
-				<div style="float: left;" class="link-countries">
-					<div><a href="#" data-country="usa">USA</a></div>
-					<div><a href="#" data-country="canada">Canada</a></div>
-				</div>
-			</div>
+	<div id="filter" class="container-filter" style="" >
 
-			<div id="products-AMERICAS" class="products" style="float:left;" style="display:none">
-				<div style="float: left;" class="link-products">
-					<div><a id="link-products-AMERICAS-abModels" href="#"
-							data-product="aw139"
-							onclick="selectLinkProducts(this.id);">
-						AB Models</a>
-					</div>
-					<div><a id="link-products-AMERICAS-Aw109" href="#"
-							data-product="aw109"
-							onclick="selectLinkProducts(this.id);">Aw109/as119</a>
-					</div>
+			<div class="tab-africa">
+				<div class="panel-heading-region">
+					<h4 class="panel-title-region" id="africaTitle" >
+						<a href="javascript:void(0)" class="linkRegion" id="africalink"
+						   data-region="africa"
+						   onclick="selectLinkRegion(this.id);">AFRICA</a>
+					</h4>
+				</div> 
+				<div id='africa-service-centres' class='panel-collapse-region' style='display:none;'>                      	
+				</div>                        
+			 </div>
+
+		 <div class="tab-americas">
+				<div class="panel-heading-region">
+					<h4 class="panel-title-region" id="americaTitle">
+						<a href="javascript:void(0)" class="linkRegion" id="americalink"
+						   data-region="america"
+						   onclick="selectLinkRegion(this.id);">AMERICAS</a>
+					</h4>
 				</div>
-			</div>			
-			
-			
-		</div>
-	</div>
-	
-	
-</div>
+				<div id='america-service-centres' class='panel-collapse-region' style='display:none;'>                      	
+				</div> 
+		 </div>
+
+ </div> 
 
 <script>
 $(document).ready(function(){
@@ -67,51 +49,78 @@ $(document).ready(function(){
 
 $(".linkRegion").click(function() {
 
-	//appendLinkCountryInsideRegion("AMERICA", [{key: "usa", value: "USA"}], this, "service-centres");
-	
-	appendLinkCountryProductInsideRegion("AMERICA", [{key: "usa", value: "USA"}], [{key: "aw139", value: "aw139"}],this, "service-centres");
+
+	appendLinkCountryProductInsideRegion("america", [{key: "usa", value: "USA"}],[{key: "prdo", value: "PRODOTTO"}], this, 'service-centres');
 
 	});
 });
 
+function collapse(idToCollapse){
+
+ $(".panel-collapse-region").not( idToCollapse).hide("slow");
+  $(idToCollapse).toggle("slow");
+  $(".foglia").hide("slow");
+  $(".products").hide("slow");
+  $(".countries").hide("slow");
+}
+
 function appendLinkCountryProductInsideRegion(region, countries, products, element, type){
 	
+
 	var id = region + "-" + type;
+	$("#"+id+" :first-child").remove();
 	var idLinkCountries = "link-countries-" + id;
 	var idLinkProducts = "link-products-" + id;	
 	
-	var html = "<div id='"+ id +"' class='panel-collapse-region'>";
-	html+= "<div class='panel-body-region'>";
-	html+= "<div class='link-product-countries' style='float: left;'>";
-	html+= "<div><a href='javascript:void(0)' style='opacity:0.5;'  id='" + idLinkCountries + "' onclick='selectCountries(" + id + ");'>Countries</a></div>";
-	html+= "<div><a href='javascript:void(0)' style='opacity:0.5;'  id='" + idLinkProducts + "' onclick='selectCountries(" + id + ");'>Products</a></div>";
+	var html= "<div class='link-product-countries' style='float: left;'>";	
+	html+= '<div><a href="javascript:void(0)" style="opacity:0.5;" id=\'' + idLinkCountries + '\' onClick="selectCountries(\'' + id + '\');collapseCountries(\'' + id + '\');" >Countries</a></div>';
+	html+= '<div><a href="javascript:void(0)" style="opacity:0.5;" id=\'' + idLinkProducts + '\' onClick="selectProducts(\'' + id + '\');collapseProducts(\'' + id + '\');" >Products</a></div>';		
+	html+=	'</div>';
+	var countries = appendCountries(region, countries, element, type);
+	if(typeof countries !== 'undefined'){
 		
-	html+=	"</div>";
-	html+= appendCountries(region, countries, element, type);
-	html+= appendProducts(region, products, element, type);	
-	html+=	"</div>";
+		html+= countries;
+		
+	}
+	
+	var products = appendProducts(region, products, element, type);
+	if(typeof products !== 'undefined'){
+		
+		html+= products;
+		
+	}
+
 	html+="</div>";
-	var classParent = element.parentElement.parentElement.parentElement.getAttribute('class');
-	$("."+ classParent).append(html);	
+	$("#"+id).append(html);
+	collapse("#" + id);
 
 
 }
 
+
 function appendLinkCountryInsideRegion(region, countries, element, type){
 	var id = region + "-" + type;
+	$("#"+id+" :first-child").remove();
 	var idLinkCountries = "link-countries-" + id;
 	
+	var html= "<div class='panel-body-region'>";
+	html+= "<div class='link-product-countries' style='float: left;'>";			
+	html+= '<div><a href="javascript:void(0)" style="opacity:0.5;" id=\'' + idLinkCountries + '\' onClick="selectCountries(\'' + id + '\');collapseCountries(\'' + id + '\');" >Countries</a></div>';
+	html+=	"</div>";
 	
-	var html = "<div id='"+ id +"' class='panel-collapse-region'>";
-	html+= "<div class='panel-body-region'>";
-	html+= "<div class='link-product-countries' style='float: left;'>";
-	html+= "<div><a href='javascript:void(0)' style='opacity:0.5;'  id='" + idLinkCountries + "' onclick='selectCountries(" + id + ");'>Countries</a></div>";
+	var countries = appendCountries(region, countries, element, type);
+	if(typeof countries !== 'undefined'){
+		
+		html+= countries;
+		
+	}
 	html+=	"</div>";
-	html+= appendCountries(region, countries, element, type);
-	html+=	"</div>";
-	html+="</div>";
-	var classParent = element.parentElement.parentElement.parentElement.getAttribute('class');
-	$("."+ classParent).append(html);	
+	$("#"+id).append(html);
+	$(".panel-collapse-region").not("#" + id).hide("slow");
+	$("#" + id).toggle("slow");
+	$(".foglia").hide("slow");
+	$(".products").hide("slow");
+	$(".countries").hide("slow");
 }
 
 function appendCountries(region, countries, element, type){

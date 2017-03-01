@@ -47,21 +47,33 @@
 <p>I would like to say: </p>
 
 
-<div class="panel-heading-region">
-	<h4 class="panel-title-region" id="americaTitle">
-		<a href="javascript:void(0)" class="linkRegion" id="americalink"
-		   data-region="america"
-		   onclick="collapse(AMERICAS);selectLinkRegion(this.id);">AMERICAS</a>
-	</h4>
-</div>
-<div id="AMERICAS" class="panel-collapse-region" style="display:none">
-	<div class="panel-body-region">
-		<div class="link-product-countries" style="float: left;">
-			<div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-countries-AMERICAS" onclick="collapseCountries('AMERICAS');selectCountries('AMERICAS');">Countries</a></div>
-			<div><a href="javascript:void(0)" style="opacity:0.5;"  id="link-products-AMERICAS" onclick="collapseProducts('AMERICAS'); selectProducts('AMERICAS');">Products</a></div>
-		</div>
-	</div>
-</div>
+	<!--FILTER PANEL SERVICE CENTRES-->
+	<div id="filter" class="container-filter" >
+		<div class="">
+			<div class="tab-africa">
+				<div class="panel-heading-region">
+					<h4 class="panel-title-region" id="africaTitle" >
+						<a href="javascript:void(0)" class="linkRegion" id="africalink"
+						   data-region="africa"
+						   onclick="selectLinkRegion(this.id);">AFRICA</a>
+					</h4>
+				</div> 
+				<div id='africa-service-centres' class='panel-collapse-region' style='display:none;'>                      	
+				</div>                        
+			 </div>
+		 </div>
+		 <div class="tab-americas">
+				<div class="panel-heading-region">
+					<h4 class="panel-title-region" id="americaTitle">
+						<a href="javascript:void(0)" class="linkRegion" id="americalink"
+						   data-region="america"
+						   onclick="selectLinkRegion(this.id);">AMERICAS</a>
+					</h4>
+				</div>
+				<div id='america-service-centres' class='panel-collapse-region' style='display:none;'>                      	
+				</div> 
+		 </div>
+	 </div>  
 
 <script>
 $(document).ready(function(){
