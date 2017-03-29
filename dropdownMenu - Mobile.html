@@ -61,13 +61,13 @@
     content: "\f077";
     float: right;
 }
-
-#div_entry_mobile_selected:after{
+/*
+#div_entry_mobile_selected a:before{
     font-family: 'FontAwesome';
     content: "\f077";
     float: right;
 	cursor: pointer;
-}
+}*/
 </style>
 </head>
 <body>
@@ -90,7 +90,7 @@
 			</div>
 		
 		<div id="div_entry_mobile_selected" style="display:none">
-			<span id="entry-mobile-selected">Service Centres</span>
+			<span id="entry-mobile-selected">Service Centres</span><a href=""><<span>BACK</span></a>   
 			
 		</div>
 		</div>
@@ -110,7 +110,7 @@ $(document).ready(function() {
 			$('.dropdown').hide();
 		});
 
-	$("#div_entry_mobile_selected:after").click(function() {
+	$("#div_entry_mobile_selected a").click(function() {
 			
 			$('#div_entry_mobile_selected').hide();	
 			$('.dropdown').show();

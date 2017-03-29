@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+
+<script src="./jquery/jquery.min-1.9.1.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<style>
+.arrow-right {
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid #ddd;
+    border-bottom: 10px solid #ddd;;
+    border-left: 10px solid #fff;
+}
+
+#test:before{
+	background-image: 
+	font-family: 'FontAwesome';
+	content: url(./images/arrow-right.png);
+    /*content: "\f0da";*/
+    float: left;
+    transform: scale(0.1,0.1);
+	width: 10px;
+	height : 10px;
+}
+
+#test1:before{
+	content: "";
+	width: 10px;
+	height : 10px;
+}
+</style>
+
+<meta charset="utf-8">
+<title>arrows demo</title>
+
+</head>
+<body>
+
+<!--div>
+<i class="fa fa-caret-right"></i> 
+<span class="icon-name">fa-caret-right</span>                
+<span class="icon-value">"\f0da"</span>
+</div-->
+<div style="float: left;border-style: solid;" class="link-countries">
+
+<div id="test">
+<a href="javascript:void(0)" id="link-countries-america-brazil" onclick="selectLinkCountries(this);" data-country="brazil" style="opacity: 1;">
+<span style="margin-left: 20px;">Brazil</span>
+</a>
+</div>
+
+<div id="test1">
+<a href="javascript:void(0)" id="link-countries-america-usa" onclick="selectLinkCountries(this);" data-country="usa" style="opacity: 0.5;">
+<span style="margin-left: 20px;">USA</span>
+</a>
+</div>
+
+</div>
+
+</body>
+</html>
